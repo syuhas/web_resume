@@ -9,55 +9,59 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" 
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
         crossorigin="anonymous">
-        <!--jinja template title-->
+        <!--title template-->
         <title>{% block title %}{% endblock %}</title>
     </head>
     
     <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/">Home</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/projects">Projects</a>
+                    <a class="dropdown-item" href="/resume">Resume</a>
+                    <a class="dropdown-item" href="/contact">Contact</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="nav-link disabled">Menu</div>
+                </li>
+              </ul>
+              <div>DigitalSteve</div>
+            </div>
+          </nav>
+        
+
+        <div class="main">{% block content %} {% endblock %}</div>
+
         <div class="picbar">
-        <h4 class="digsteve">DigitalSteve</h4>
-        <div class="picbar_img">
-            <center>
-                <img src="{{ url_for('static', filename='git.png') }}" width="100" height="100" />
-                <img src="{{ url_for('static', filename='aws.png') }}" width="140" height="100"/>
-                <img src="{{ url_for('static', filename='python.png') }}" width="75" height="75"/>
-            </center>
+            
+            <div class="picbar_img">
+                <div><center class="digsteve">Built With: </center></div>
+                <center>
+                    <img src="{{ url_for('static', filename='git.png') }}" width="100" height="100" />
+                    <img src="{{ url_for('static', filename='aws.png') }}" width="140" height="100"/>
+                    <img src="{{ url_for('static', filename='python.png') }}" width="75" height="75"/>
+                    <img src="{{ url_for('static', filename='flask.png') }}" width="75" height="75"/>
+                </center>
+            </div>
         </div>
-        </div>
-        <div style="background-color:azure">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link enabled" href="{{ url_for('views.home') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('views.projects') }}">Projects</a>
-                </li>
-                <img src="{{ url_for('static', filename='cloudcomp.png') }}" width="50" height="50"/>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="main">
-
-            {% block content %} {% endblock %}
-        
-        </div>
-    
-        
-        
-
-
-
-
+            
         <!--jQuery, Popper, Boostrap-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
-            crossorigin="anonymous"
+        crossorigin="anonymous"
         ></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" 
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
