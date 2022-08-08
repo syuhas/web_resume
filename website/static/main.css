@@ -1,6 +1,10 @@
 div.picbar {
   background-image: url(../static/cloudtech.jpg);
+}
 
+div.picbar_img img {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
 }
 
 div.main {
@@ -10,4 +14,10 @@ div.main {
   text-align: center;
   border: 05px solid rgb(23, 21, 21);
 
+}
+
+h4.digsteve {
+  font: 200;
+  font-family: fantasy;
+  color: goldenrod;
 }
