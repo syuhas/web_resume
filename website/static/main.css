@@ -1,0 +1,13 @@
+div.picbar {
+  background-image: url(../static/cloudtech.jpg);
+
+}
+
+div.main {
+  height: 400px;
+  width: 100%;
+  background-color: rgb(58, 74, 110);
+  text-align: center;
+  border: 05px solid rgb(23, 21, 21);
+
+}
