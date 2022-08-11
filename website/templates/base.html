@@ -11,53 +11,63 @@
         crossorigin="anonymous">
         <link rel="icon" type="image/ico" href="{{ url_for('static', filename='cloudcomp.png')}}">
         <!--title template-->
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}Home{% endblock %}</title>
     </head>
     
     <body>
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
-          
+            </button>          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/">Home</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/projects">Projects</a>
-                    <a class="dropdown-item" href="/resume">Resume</a>
-                    <a class="dropdown-item" href="/contact">Contact</a>
+                    <a class="dropdown-item" href="/login">Visitor Log</a>
                   </div>
                 </li>
                 <li class="nav-item">
                   <div class="nav-link disabled">Menu</div>
                 </li>
+                
               </ul>
-              <div>DigitalSteve</div>
+                <div class="logo"><img src="{{ url_for('static', filename='digitalsteve.png') }}"></div>
+              </div>
             </div>
+            
           </nav>
+          
+          
         
 
         <div class="main">{% block content %} {% endblock %}</div>
+        
+
+
+        <div class="footer">
+
+        </div>
+
+
 
         <div class="picbar">
             
             <div class="picbar_img">
-                <div><center class="digsteve">Built With: </center></div>
+                <div><center class="builtwith">Built With: </center></div>
                 <center>
-                    <img src="{{ url_for('static', filename='git.png') }}" width="100" height="100" />
-                    <img src="{{ url_for('static', filename='aws.png') }}" width="140" height="100"/>
-                    <img src="{{ url_for('static', filename='python.png') }}" width="75" height="75"/>
-                    <img src="{{ url_for('static', filename='flask.png') }}" width="75" height="75"/>
+                    <img src="{{ url_for('static', filename='git.png') }}" width="50" height="50" />
+                    <img src="{{ url_for('static', filename='aws.png') }}" width="70" height="50"/>
+                    <img src="{{ url_for('static', filename='python.png') }}" width="35" height="35"/>
+                    <img src="{{ url_for('static', filename='flask.png') }}" width="35" height="35"/>
                 </center>
             </div>
         </div>
+        
             
         <!--jQuery, Popper, Boostrap-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
