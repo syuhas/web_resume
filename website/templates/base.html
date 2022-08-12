@@ -15,34 +15,43 @@
     </head>
     
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF">
+      
+      
+
+        
+      
+          <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>          
+            </button>
+            
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/">Home</a>
-                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/projects">Projects</a>
                     <a class="dropdown-item" href="/login">Visitor Log</a>
-                  </div>
+                  </div>     
                 </li>
-                <li class="nav-item">
-                  <div class="nav-link disabled">Menu</div>
-                </li>
-                
               </ul>
-                <div class="logo"><img src="{{ url_for('static', filename='digitalsteve.png') }}"></div>
-              </div>
             </div>
-            
           </nav>
-          
-          
+      
+
+      <div class="logo">
+      <a class="navbar-brand">
+        <img src="{{ url_for('static', filename='digitalsteve.png') }}" alt="" height="40">
+      </a>
+      </div>
+
+        
+    
+      
         
 
         <div class="main">{% block content %} {% endblock %}</div>

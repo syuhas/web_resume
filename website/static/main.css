@@ -1,17 +1,30 @@
 
-nav {
-  background-color: rgb(255, 255, 255); 
+
+
+div.logo {
+  padding: 20;
+  text-align: right;
+  margin: 20;
 }
 
-div.logo{
-  height: 60px;
-  border: 05px auto rgb(23, 21, 21);
-  opacity: 60%;
+#navigation-container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
+
+
+
+
+
+
+
+
 
 div.main {
   height: auto;
-  min-height: 400px;
+  min-height: 200px;
   width: 100%;
   background-color: rgb(58, 74, 110);
   
@@ -23,11 +36,7 @@ div.main_text {
   color: rgb(248, 157, 21);
 }
 
-div.collapse {
-  height: 45px;
-  background-color: rgb(255, 255, 255);
-  
-}
+
 
 div.nav-link {
   font-family: Arial, Helvetica, sans-serif;
@@ -57,3 +66,4 @@ div.footer {
   width: 100%;
   background-color: grey;
 }
+
