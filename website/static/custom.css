@@ -1,0 +1,73 @@
+
+div.main {
+    height: auto;
+    min-height: 600px;
+    width: auto;
+
+    background-size: 100% 100%;
+    text-align: center;
+    background-image: url(../static/tester.png);
+    border: 3px solid rgb(0, 0, 0);
+    
+  }
+
+  .body_home {
+    text-align: left;   
+  }
+
+  .flex-container {
+    display: flex;
+    padding-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+
+
+  .flex-greeting {
+    color: rgb(0, 0, 0);
+    opacity: 100%;    
+  }
+
+  .flex-child {
+    flex: 1;
+    
+  }
+
+  
+
+  .flex-container img {
+    height: auto;
+    width: 200px;
+    opacity: 95%;
+    clip-path: circle();
+    background-color: rgb(196, 196, 196);
+  }
+
+
+
+  
+  
+  
+
+  .footer {
+    background-color: rgb(70, 70, 70);
+    border: 3px solid rgb(23, 21, 21);
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  
+  .footer img {
+    opacity: 60%;
+  }
+
+  
+  
+  
+  
