@@ -13,43 +13,51 @@
         <!--title template-->
         <title>{% block title %}Home{% endblock %}</title>
     </head>
-    
     <body>
-        <!--Digital steve logo(home link) and navbar-->
-        
-        
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a href="/"><img src="{{ url_for('static', filename='digitalsteve.png') }}" alt="Home" width="250px" style="opacity: 50%;"></a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <div class="navbar-nav">
-                    
-                    <a class="nav-item nav-link" id="home" href="/">Home</a>
-                    <a class="nav-item nav-link" id="projects" href="/projects">Projects</a>
-                    <a class="nav-item nav-link" id="projects" href="/projects">Resume</a>
-                    <a class="nav-item nav-link" id="projects" href="/projects">Contact</a>
+    <div class="navwrap">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a href="/"><img src="{{ url_for('static', filename='digitalsteve.png') }}" alt="Home"></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbar"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="navbar-nav">
+                        
+                        <a class="nav-item nav-link" id="home" href="/">Home</a>
+                        <a class="nav-item nav-link" id="projects" href="/projects">Projects</a>
+                        <a class="nav-item nav-link" id="projects" href="/projects">Resume</a>
+                        <a class="nav-item nav-link" id="projects" href="/projects">Contact</a>
 
+                    </div>
                 </div>
-            </div>
-        </nav>
-      
-        
-
-        <div class="main" style="background-color: rgb(196, 196, 196);">{% block content %} {% endblock %}</div>
-    
-
-
-        
+            </nav>
+    </div>
         
             
+
+            <div class="main">{% block content %} {% endblock %}</div>
+        
+
+
+            
+            
+                
+            
+        
+        
+        <div class="footer">
+            <div class="footertxt"></div>
+                <img src="{{ url_for('static', filename='git.png') }}"/>
+                <img src="{{ url_for('static', filename='aws.png') }}"/>
+                <img src="{{ url_for('static', filename='python.png') }}"/>
+                <img src="{{ url_for('static', filename='flask.png') }}"/>
+        </div>
         <!--jQuery, Popper, Boostrap-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
@@ -64,11 +72,5 @@
         crossorigin="anonymous"
         ></script>
     </body>
-    <footer class="footer">
-        Built With:
-            <img src="{{ url_for('static', filename='git.png') }}" width="30" height="30" />
-            <img src="{{ url_for('static', filename='aws.png') }}" width="70" height="50"/>
-            <img src="{{ url_for('static', filename='python.png') }}" width="25" height="25"/>
-            <img src="{{ url_for('static', filename='flask.png') }}" width="25" height="25"/>
-    </footer>
+
 </html>
