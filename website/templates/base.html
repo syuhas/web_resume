@@ -12,12 +12,12 @@
         <link rel="icon" type="image/ico" href="{{ url_for('static', filename='cloudcomp.png')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
         <!--title template-->
         <title>{% block title %}Home{% endblock %}</title>
     </head> 
     <div class="navwrap">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-image: url(../static/navbar.png); background-size:contain; background-repeat: no-repeat; background-color: #89bdbb; border: .5vw solid black">
                 <a href="/"><img src="{{ url_for('static', filename='DSLogo6.png') }}" alt="Home"></a>
                 <button
                     class="navbar-toggler"
@@ -60,7 +60,7 @@
 
     <footer>
         <div class="footer-text">
-            <div>Made With:</div>
+            <div class="made-with">Made With:</div>
         </div>
         <div class="footer-grid">
             <img src="{{ url_for('static', filename='git.png') }}"/>
