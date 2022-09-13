@@ -1,11 +1,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,400&display=swap');
+
 * {box-sizing: border-box;}
 
 .navwrap img{
-  height: 6em;
-  opacity: 100%;
+  height: 6vw;
+  opacity: 90%;
 }
 
   
@@ -13,36 +15,35 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(../static/bluetangradient2.jpg);
+  background-image: url(../static/crazybg.jpg);
   background-size: cover;
-  
 }
 
 .main {
   font-family: 'Red Hat Display', sans-serif;
   font-size: clamp(8px, 3vw, 28px);
-  border: .5vw solid black;
 }
 
 
 .intro-grid {
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   display: grid;
   text-align: center;
   padding-block: 1em;
   padding-left: 5vw;
   grid-template-areas:
-  ". . iot1 . . . iot2 . "
-  "g1 g2 . w1 . . w2 ."
-  "m1 . . . . m2 . ."
+  ". . . . iot1 . . iot2"
+  ". g1 . . . g2 . ."
+  ". . . . w1 . w2 ."
+  "m1 . . m2 . . . ."
   ". d1 . d2 . . . ."
-  "c1 . . . c2 . . .";
+  ". c1 . . . . c2 .";
   
 }
 
 .grid-greet h1, h2 {
-  font-size: clamp(18px, 4vw, 32px);
+  font-size: clamp(18px, 2vw, 30px);
 }
 .grid-greet h2 {
   font-style: italic;
@@ -53,62 +54,56 @@ p {
 }
 
 .grid-greet {
-  grid-row: 1 / 3;
+  grid-row: 1 / 4 ;
   grid-column: g1 / g2;
-  box-shadow: -5px -5px 10px #4e4a41;
+  box-shadow: 5px 5px 10px black;
   border-radius: .5em;
-  min-width: 40vw;
-  padding-top: 5vh;
-  padding-bottom: 30vh;
+  padding-top: 10vh;
+  background-color: #3B5367;
+  border: .25vh solid #c28422;
 }
 
 
 
 .grid-who {
-  grid-row: 2 / 6;
+  grid-row: 3 / 7;
   grid-column: w1 / w2;
   padding-top: 2em;
-  border-radius: .25em;
-  box-shadow: 10px 10px 5px #4e4a41;
-  padding: 1em;
-  background-color: #264e58;
-  color: white;
+  border-radius: 2em;
+  box-shadow: 5px 5px 10px black;
+  padding: 5em;
+  font-size: clamp(8px, 8vw, 14px);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  opacity: 100%;
+  background-color: #3B5367;
+  border: .25vh solid #c28422;
 }
 
 .grid-map {
-  grid-row: 2 / 6;
+  grid-row: 3 / 8;
   grid-column: m1 / m2;
   background-image: url(../static/cloudmap.png);
-  background-size: 50vw;
+  background-size: 40vw;
   background-repeat: no-repeat;
   background-position: top-left;
-  opacity: 20%;
+  opacity: 100%;
 }
 
 .grid-iot {
-  grid-row: 1 / 2;
+  grid-row: 1 / 6;
   grid-column: iot1 / iot2;
   background-image: url(../static/iot.png);
-  background-position: right;
+  background-position: top;
   background-size: 25vw;
   background-repeat: no-repeat;
   padding: 2em;
-  opacity: 20%;
+  opacity: 90%;
 }
 
-.grid-dev {
-  grid-row: 4 / 5;
-  grid-column: d1 / d2;
-  background-image: url(../static/devops2.png);
-  background-position: left;
-  background-size: 20vw;
-  background-repeat: no-repeat;
-  padding: 2em;
-  opacity: 10%;
-}
+
 
 .grid-certs {
-  grid-row: 5 / 6;
+  grid-row: 8 / 10;
   grid-column: c1 / c2;
   background-image: url(../static/certs.png);
   background-size: 40vw;
@@ -116,12 +111,19 @@ p {
   background-repeat: no-repeat;
 }
 
+.grid-certs::before {
+  content: 'Certifications';
+  color: #D2F5FF;
+  text-shadow: 5px 5px 10px black;
+  padding: 10em;
+}
+
 
 
 
 
 footer {
-  background-color: #4e4a41;
+  background-color: #343a40;
   border: 1px solid black;
   margin-top: auto;
   min-height: 6vh;
@@ -160,9 +162,14 @@ footer img {
 
 @media (max-device-width: 60em) {
 
+  .navwrap img{
+    height: 12vw;
+    opacity: 90%;
+  }
+
   .intro-grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(14, 1fr);
     display: grid;
     padding-block: .5em;
     padding-left: 10vw;
@@ -178,30 +185,30 @@ footer img {
   }
 
 
-
-  .grid-greet {
-    grid-row: 1 / 2;
-    padding: 0;
-    padding-top: 2em;
-    border: .25vw solid black;
-  }
-  .grid-who {
-    grid-row: 3 / 6;
-  }
   .grid-map {
-    grid-row: 2 / 4;
-    background-size: 50vh;
+    grid-row: 3 / 7;
+    background-size: 45vw;
     
   }
+  .grid-greet {
+    grid-row: 1 / 3;
+    padding: 1em;
+  }
+  .grid-who {
+    grid-row: 4 / 11;
+    padding-top: 15vw;
+  }
+  
   .grid-iot {
-    grid-row: 4 / 6;
+    grid-row: 2 / 5;
   }
   .grid-certs {
-    grid-row: 7 / 7;
-    background-size: 30vh;
+    grid-row: 12 / 14;
+    background-size: 25em;
+    padding: 0;
   }
   .grid-dev {
-    grid-row: 3 / 5;
+    grid-row: 6 / 10;
   }
   
   footer img {
