@@ -6,8 +6,8 @@
 * {box-sizing: border-box;}
 
 .navwrap img{
-  height: 6vw;
-  opacity: 90%;
+  height: 7vw;
+  opacity: 70%;
 }
 
   
@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(../static/crazybg.jpg);
+  background-image: url(../static/bg-or-bl.jpg);
   background-size: cover;
 }
 
@@ -131,6 +131,7 @@ footer {
   padding-bottom: 1vh;
   display: grid;
   justify-content: center;
+  grid-column: f1 / f2;
 }
 
 .footer-text {
@@ -167,9 +168,13 @@ footer img {
     opacity: 90%;
   }
 
+  body {
+    background-image: url(../static/bg-or-bl-sm.jpg);
+  }
+
   .intro-grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(14, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     display: grid;
     padding-block: .5em;
     padding-left: 10vw;
@@ -177,7 +182,7 @@ footer img {
     grid-template-areas:
     "g1 . . . . . g2 ."
     "w1 . . . . . w2 ."
-    ". . . iot1 . . . iot2 "
+    ". . . . . iot1 . iot2 "
     "m1 . . . . . . m2"
     "d1 . . d2 . . . ."
     "c1 . . . . . c2 .";
@@ -185,25 +190,26 @@ footer img {
   }
 
 
-  .grid-map {
-    grid-row: 3 / 7;
-    background-size: 45vw;
-    
-  }
+  
   .grid-greet {
-    grid-row: 1 / 3;
+    grid-row: 1 / 2;
     padding: 1em;
   }
   .grid-who {
-    grid-row: 4 / 11;
+    grid-row: 3 / 7;
     padding-top: 15vw;
   }
   
   .grid-iot {
-    grid-row: 2 / 5;
+    grid-row: 3 / 4;
+  }
+  .grid-map {
+    grid-row: 2 / 4;
+    background-size: 65vw;
+    
   }
   .grid-certs {
-    grid-row: 12 / 14;
+    grid-row: 7 / 8;
     background-size: 25em;
     padding: 0;
   }
