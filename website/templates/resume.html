@@ -1,0 +1,61 @@
+
+{% extends "base.html" %} 
+
+{% block title %}Resume{% endblock %} 
+{% block head %}
+
+{% endblock %}
+{% block content %}
+
+<main class="resume_parent">
+
+    <h1 class="res_title">Resume</h1>
+
+    <section class="summary">
+        <h4>Summary</h4>
+        <p style="color: white; padding:    5em; font-size: inherit;">
+            Motivated professional in the process of making a career shift. After more than a decade of business experience in
+            hospitality and restaurant management, I have developed a passion for working with AWS services, with a focus on DevOps,
+            IaC and Docker technologies. Skilled in setting and managing team goals and collaborative project management. Currently
+            pursuing BS in Computer Science and have completed AWS Certification, with additional certification in progress. Career
+            goals include working with DevOps CI/CD-based deployment models and IaC technologies. Seeking a full time IT role that will
+            provide challenge and experience in design and deployment of cloud infrastructures in commercial environments.
+        </p>
+    </section>
+
+    <section class="skills">
+        <article class="skillchild">
+            <ul><h4>Technical</h4>
+                <li class="skill_li">Amazon Web Services - 1 year</li>
+                <li class="skill_li">Network Security - 1 year</li>
+                <li class="skill_li">Point of Sale Computer Systems - 10 years</li>
+                <li class="skill_li">Cloud Computing - 1 year</li>
+            </ul>
+        </article>
+        <article class="skillchild2">
+            <h4>Soft Skills</h4>
+            <ul>
+                <li class="skill_li">Strong communication skills</li>
+                <li class="skill_li">Team building, collaborative management</li>
+                <li class="skill_li">Critical Thinking</li>
+                <li class="skill_li">Attention to Detail</li>
+                <li class="skill_li">Persistence</li>
+            </ul>
+        </article>
+    </section>
+
+    <section class="certs"><h4>Certifications</h4>
+        <section class="certwrapper">
+            <p><img src="{{ url_for('static', filename='ccp.png') }}" alt=""></p>
+            <p><img src="{{ url_for('static', filename='saa.png') }}" alt=""></p>
+        </section>
+    </section>
+    <section class="tech">
+        <h4>Technologies</h4>
+
+    </section>
+    <section class="exp">exp section</section>
+    <section class="edu">education section</section>
+</main>
+
+{% endblock %}

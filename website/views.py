@@ -12,4 +12,8 @@ def home():
 def projects():
     return render_template('projects.html')
 
+    
+@views.route('/resume')
+def resume():
+    return render_template('resume.html')
 
