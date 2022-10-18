@@ -17,3 +17,7 @@ def projects():
 def resume():
     return render_template('resume.html')
 
+@views.route('/project_site')
+def project_site():
+    return render_template('project_site.html')
+

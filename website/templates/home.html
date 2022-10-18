@@ -23,8 +23,8 @@
    
 
     <article class="grid-who">
-        <h2 style="text-shadow: 5px 5px 10px black">Hi There</h2>
-        <p>My name is <span style="color:#c28422; text-shadow: 5px 5px 10px black">Steve</span>. Welcome to my site.</p>
+        <h2 style="text-shadow: 5px 5px 10px black">Welcome.</h2>
+        <p>My name is <span style="color:#c28422; text-shadow: 5px 5px 10px black; font-size: larger;">Steve</span>. Thanks for visiting my site.</p>
         <p>A year ago I decided to make a significant change. I decided to follow my passion for technology and computing and am in the process of effecting a career change into the field after a decade and a half of dedication to my current profession in food service and hospitality as a professional Chef.
         </p>
         
@@ -41,7 +41,7 @@
         <p>Thank you for visiting and I hope to hear from you soon!
         </p>
         
-        <p style="text-shadow: 5px 5px 10px black">~Stephen Yuhas
+        <p style="text-shadow: 5px 5px 10px black; font-style: italic;">~&nbsp; Stephen Yuhas
         </p>
         
         
@@ -52,8 +52,13 @@
     </article>
 
     <article class="grid-certs">
-        <p style="color: white; text-shadow: 5px 5px 10px black; padding-top: 2em;">Certifications</p>
+        <img src="{{ url_for('static', filename='certs.png') }}" alt="">
     </article>
+    
+    <article class="grid-cert-text">
+        <p style="color: white; text-shadow: 5px 5px 10px black;">Certifications</p>
+    </article>
+    
 
     
 

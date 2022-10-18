@@ -1,0 +1,39 @@
+
+{% extends "base.html" %} 
+
+{% block title %}Projects{% endblock %} 
+{% block head %}
+
+{% endblock %}
+{% block content %}
+
+<main class="project-site-intro">
+<div class="project-site-intro-wrapper">
+    <h1 style="letter-spacing: .25vw;">Website Build</h1>
+    <section class="project-site-img-dgm">
+        <img src="{{ url_for('static', filename='WebsiteDiagram.png') }}" alt="">
+    </section>
+</div>
+</main>
+
+
+<div class="project-site-grid">
+    <section class="project-site-grid-child">
+        <h4>Overview</h4>
+        <p style="margin-left: 10vw; margin-right: 10vw;">This site was built not only to start compiling completed projects into one place, but also because the site is a project in and of itself. It has been built from the ground up using AWS for features like hosting, CI/CD aspects, DNS services, load balancing, caching and TLS authentication in addition to coding all the HTML and CSS via a Python Flask app which is lightweight and gives the freedom to add features in the future as desired. </p>
+    </section>
+    <section class="project-site-grid-child">
+        <h4>Python Flask / HTML / CSS</h4>
+        <div class="project-site-child-pyflask">
+            <div class="pyth"><img src="{{ url_for('static', filename='site-python.png') }}" alt=""></div>
+            <p class="pyth-text">Starting with a simple &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Python Flask</span> &nbsp; app, the necessary groundwork needed for the basic outline of the site can be built. This includes the blueprint that will link to all of the html templates to each route on the base html template.  </p>
+            <div class="html"><img src="{{ url_for('static', filename='site-html.png') }}" alt=""></div>
+            <p class="html-text">Now the base &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">HTML</span> &nbsp; template can be built that will act as the basic design of the site, including the navigation bar, footer and background design. <br><br>Using &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Bootstrap</span> &nbsp; for a navigation bar we now have a working skeleton to add pages to. Jinja is used for the templating in Flask so we can extend the additional html stemming from this base page.</p>
+            <div class="css"><img src="{{ url_for('static', filename='site-css.png') }}" alt=""></div>
+            <p class="css-text">Using an external &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">CSS</span> &nbsp; stylesheet, the look of the site can be completely controlled in one place. A combination of &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Grid</span> &nbsp; template areas and &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">FlexBox</span> &nbsp; is used so the layout of the site can be fine tuned and allow for media queries for viewing on different devices. This is where the bulk of the design for the site takes place.</p>
+            <p class="pyflask-outro">All of these components combined make up the whole of the site. In addition to using all of these elements, the site was created using a &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Virtual Environment</span> &nbsp; so only the necessary &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Dependencies</span> &nbsp; are kept locally in one place. This makes things easier when creating and uploading a &nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">requirements.txt</span> &nbsp; file to be used with Elastic Beanstalk in the future, and ensures that no unecessary dependencies are installed.</p>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
