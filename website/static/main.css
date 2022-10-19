@@ -127,7 +127,7 @@ p {
 
 
 .grid-who {
-  grid-row: 2 / 6;
+  grid-row: 2 / 5;
   grid-column: w1 / w2;
   padding-top: 2em;
   border-radius: 2em;
@@ -136,7 +136,7 @@ p {
   font-size: clamp(8px, 8vw, 14px);
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  opacity: 100%;
+
   background-color: #3B5367;
   border: .25vh solid #c28422;
 }
@@ -163,22 +163,17 @@ p {
   opacity: 13%;
 }
 
-.grid-cert-text {
-  grid-row: 7 / 8;
-  grid-column: ct1 / ct2;
-  padding-top: 1em;
-}
-
 .grid-certs {
-  grid-row: 7 / 8;
+  grid-row: 6 / 7;
   grid-column: c1 / c2;
+  background-image:  url(../static/certs.png);
+  background-size: 60vw;
+  background-repeat: no-repeat;
+  background-position: center;
   box-shadow: 2px 2px 5px black;
   border: 2px solid black;
-  
   background-color:#3B5367;
   width: 100%;
-  
-  
 }
 
 /* home/base breakpoint mid screen *****************************************************************************************************************************************************************/
@@ -489,8 +484,8 @@ p {
 .project-site-intro {
   display: block;
   padding-top: 2em;
-  width: 80%;
-  padding-left: 20%;
+  width: 90%;
+  padding-left: 10%;
 }
 
 .project-site-intro-wrapper {
@@ -507,7 +502,7 @@ p {
 }
 
 .project-site-img-dgm img {
-  width: 70%;
+  width: 40%;
   background-color: white;
   padding: .5em;
   border-radius: .5vw;
