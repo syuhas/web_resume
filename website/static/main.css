@@ -554,6 +554,11 @@ p {
 /* ********************************************************************************************************************************************************************************************* */
 /* ********************************************************************************************************************************************************************************************* */
 /* project - website start ********************************************************************************************************************************************************************* */
+.projectbody {
+  background-image: none;
+  background-color: #343a40;
+}
+
 .project-site-intro h1 {
   font-size: clamp(10px, 2vw, 30px);
   padding-bottom: 1em;
@@ -592,11 +597,7 @@ p {
   border-radius: .5vw;
   border: .25vw solid black;
 }
-@media (max-device-width: 60em) {
-  .project-site-img-dgm img {
-    width: 85%;
-  }
-}
+
 
 .project-site-grid h4 {
   font-size: clamp(10px, 1.75vw, 30px);
@@ -608,7 +609,7 @@ p {
   padding-top: 2vw;
 }
 .project-site-grid p {
-  font-size: clamp(7px, 1.5vw, 14px);
+  font-size: clamp(9px, 1.5vw, 14px);
   text-align: left;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -899,5 +900,18 @@ p {
   .project-site-grid img {
     min-width: 40vw;
     padding: .5em;
+  }
+  .project-site-img-dgm img {
+    width: 85%;
+  }
+  .project-site-grid {
+    gap: 2em;
+    width: 97%;
+    padding-left: 3%;
+  }
+
+  .project-site-intro {
+    width: 97%;
+    padding-left: 3%;
   }
 }
