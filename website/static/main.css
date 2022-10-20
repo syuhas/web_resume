@@ -254,14 +254,11 @@ p {
   }
   .grid-certs {
     grid-row: 6 / 7;
-  }
-  .grid-certs img {
-    padding-top: 10vw;
-    width: 90%;
+    background-size: 95vw;
   }
   
   footer img {
-    height: 4vh;
+    height: 4vw;
   }
     
 }
@@ -290,13 +287,13 @@ p {
   ;
 }
 .resume_parent h4 {
-  color: rgb(164, 255, 247);
+  color: #1fa2f3;
   text-shadow: 5px 5px 10px black;
   font-size: clamp(16px, 2vw, 26px);
 }
 
 .resume_parent h1 {
-  color: rgb(164, 255, 247);
+  color: #1fa2f3;
   text-shadow: 5px 5px 10px black;
   font-size: clamp(26px, 3vw, 36px);
 }
@@ -313,14 +310,17 @@ p {
   box-shadow: 5px 5px 10px black;
   border-radius: .5em;
   padding: 1.5em;
+
 }
 
 .res-title {
   grid-row: 1 / 2;
   grid-column: res1 / res2;
   text-align: center;
-  letter-spacing: .35em;
+  letter-spacing: .2em;
+  text-decoration-line: underline;
   font-style: italic;
+  padding-right: 25vw;
 }
 
 
@@ -332,7 +332,7 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 85vw;
-  opacity: 8%;
+  opacity: 11%;
 }
 
 .summary {
@@ -463,19 +463,103 @@ p {
 /* ********************************************************************************************************************************************************************************************* */
 /* projects homepage start ********************************************************************************************************************************************************************* */
 
-.project-grid {
-  display: block;
 
+.project-home-intro {
+  display: block;
+  padding-top: 1em;
+  width: 80%;
+  padding-left: 20%;
+  text-align: center;
+  padding-bottom: 10em;
 }
+
+.project-home-intro h1 {
+  font-size: clamp(20px, 3vw, 40px);
+  padding-bottom: 1em;
+  text-decoration-line: underline;
+  color: #c28422;
+  text-shadow: 5px 5px 10px black;
+  font-style: italic;
+  text-align: center;
+}
+
+.project-home-img img {
+  width: 20%;
+  background-color: white;
+  padding: .5em;
+  border-radius: .5vw;
+  box-shadow: 5px 5px 10px black;
+  border: .25vw solid black;
+}
+
+.project-home-intro-wrapper {
+  background-color: #3B5367;
+  border: .1vw solid #c28422;
+  border-radius: .5em;
+  padding: 1em;
+}
+
+.project-home-text {
+  color: white;
+  padding: 2em;
+  font-size: clamp(10px, 1vw, 30px);
+}
+
+
+
+.project-links {
+  display: block;
+  padding-top: 1em;
+  padding-bottom: 10em;
+}
+
+.project-links h4 {
+  text-decoration-line: underline;
+  color: #c28422;
+  text-shadow: 5px 5px 10px black;
+  font-style: italic;
+  text-align: center;
+}
+
+.project-links a:link {
+  color: #edc37f;
+}
+
+.project-links a:visited {
+  color: turquoise;
+}
+
+.project-links a:hover {
+  color: #edc37f;
+}
+
+
+@media (max-device-width: 60em) {
+  .project-home-img img {
+    width: 60%;
+  }
+  .project-home-intro {
+    width: 90%;
+    padding-left: 10%;
+  }
+}
+
+
+
+
+
+
 
 
 /* ********************************************************************************************************************************************************************************************* */
 /* ********************************************************************************************************************************************************************************************* */
 /* project - website start ********************************************************************************************************************************************************************* */
 .project-site-intro h1 {
-  font-size: clamp(10px, 1.5vw, 30px);
+  font-size: clamp(10px, 2vw, 30px);
   padding-bottom: 1em;
-  color: white;
+  text-decoration-line: underline;
+  color: #c28422;
+  text-shadow: 2px 2px 10px black;
   text-shadow: 5px 5px 10px black;
   font-style: italic;
   text-align: center;
@@ -491,10 +575,10 @@ p {
 .project-site-intro-wrapper {
   background-color: #3B5367;
   border: .1vw solid black;
-  box-shadow: 8px 8px 16px black;
   border-radius: .5em;
   padding: 1em;
 }
+
 
 .project-site-img-dgm {
   text-align: center;
@@ -502,15 +586,20 @@ p {
 }
 
 .project-site-img-dgm img {
-  width: 40%;
+  width: 55%;
   background-color: white;
   padding: .5em;
   border-radius: .5vw;
   border: .25vw solid black;
 }
+@media (max-device-width: 60em) {
+  .project-site-img-dgm img {
+    width: 85%;
+  }
+}
 
 .project-site-grid h4 {
-  font-size: clamp(8px, 1.75vw, 30px);
+  font-size: clamp(10px, 1.75vw, 30px);
   font-style: italic;
   text-decoration-line: underline;
   color: #c28422;
@@ -519,7 +608,7 @@ p {
   padding-top: 2vw;
 }
 .project-site-grid p {
-  font-size: clamp(6px, 1vw, 12px);
+  font-size: clamp(7px, 1.5vw, 14px);
   text-align: left;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -544,9 +633,10 @@ p {
   padding-bottom: 2vw;
 }
 
+/* ************************** */
+
 .project-site-child-pyflask {
   display: grid;
-  grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
   "pyth p"
@@ -566,5 +656,248 @@ p {
 .html-text {grid-area: h;}
 .css-text {grid-area: c;}
 .pyth-text {grid-area: p;}
-.pyflask-outro {grid-area: out;}
+.pyflask-outro {grid-area: out; margin-right: 12vw; margin-left: 12vw;}
 
+/* ************************** */
+
+.project-site-child-github {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "git gt"
+  "gct gc"
+  ;
+}
+
+.project-site-child-github p {
+  padding: 5vw;
+}
+
+.git img, .git-cmnds img {width: 90%;}
+.git {grid-area: git;}
+.git-text {grid-area: gt;}
+.git-cmnds {grid-area: gc;}
+.git-cmnds-text {grid-area: gct;}
+
+/* ******************************** */
+
+.project-site-child-pipeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "pintro pintro"
+  "pipe1 pipe1t"
+  "pipe2t pipe2"
+  "pipe3 pipe3t"
+  "pipe4t pipe4"
+  "pipe5 pipe5t"
+  ;
+}
+
+.project-site-child-pipeline p{
+  padding: 5vw;
+}
+
+.pipe1 img, .pipe2 img, .pipe3 img, .pipe4 img, .pipe5 img {width: 90%}
+.pipe-intro {grid-area: pintro; margin-right: 12vw; margin-left: 12vw;}
+.pipe1 {grid-area: pipe1;}
+.pipe1-text {grid-area: pipe1t;}
+.pipe2 {grid-area: pipe2;}
+.pipe2-text {grid-area: pipe2t;}
+.pipe3 {grid-area: pipe3;}
+.pipe3-text {grid-area: pipe3t;}
+.pipe4 {grid-area: pipe4;}
+.pipe4-text {grid-area: pipe4t;}
+.pipe5 {grid-area: pipe5;}
+.pipe5-text {grid-area: pipe5t;}
+
+/* ********************************** */
+
+.project-site-child-eb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "ebintro ebintro"
+  "eb1 eb1t"
+  "eb2t eb2"
+  "eb3 eb3t"
+  "eb4t eb4"
+  "eb5 eb5t"
+  ;
+}
+
+.project-site-child-eb p{
+  padding: 5vw;
+}
+
+.eb1 img, .eb2 img, .eb3 img, .eb4 img, .eb5 img {width: 90%}
+.eb-intro {grid-area: ebintro; margin-right: 12vw; margin-left: 12vw;}
+.eb1 {grid-area: eb1;}
+.eb1-text {grid-area: eb1t;}
+.eb2 {grid-area: eb2;}
+.eb2-text {grid-area: eb2t;}
+.eb3 {grid-area: eb3;}
+.eb3-text {grid-area: eb3t;}
+.eb4 {grid-area: eb4;}
+.eb4-text {grid-area: eb4t;}
+.eb5 {grid-area: eb5;}
+.eb5-text {grid-area: eb5t;}
+
+/* ************************************ */
+
+.project-site-child-cm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "cmintro cmintro"
+  "cm1 cm1t"
+  "cm2t cm2"
+  "cm2t cm3"
+  ;
+}
+
+.project-site-child-cm p{
+  padding: 5vw;
+}
+
+.cm1 img, .cm2 img, .cm3 img, .cm4 img {width: 90%}
+.cm-intro {grid-area: cmintro; margin-right: 12vw; margin-left: 12vw;}
+.cm1 {grid-area: cm1;}
+.cm1-text {grid-area: cm1t;}
+.cm2 {grid-area: cm2;}
+.cm2-text {grid-area: cm2t;}
+.cm3 {grid-area: cm3;}
+
+/* ************************************ */
+
+.project-site-child-waf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "wafintro wafintro"
+  "waf1 waf1t"
+  "waf2t waf2"
+  "waf3 waf3t"
+  ;
+}
+
+.project-site-child-waf p{
+  padding: 5vw;
+}
+
+.waf1 img, .waf2 img, .waf3 img, .waf4 img {width: 90%}
+.waf-intro {grid-area: wafintro; margin-right: 12vw; margin-left: 12vw;}
+.waf1 {grid-area: waf1;}
+.waf1-text {grid-area: waf1t;}
+.waf2 {grid-area: waf2;}
+.waf2-text {grid-area: waf2t;}
+.waf3 {grid-area: waf3;}
+.waf3-text {grid-area: waf3t;}
+
+/* ************************************ */
+
+.project-site-child-cf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "cfintro cfintro"
+  "cf1 cf1t"
+  "cf2t cf2"
+  "cf3 cf3t"
+  "cf4t cf4"
+  "cf5 cf5t"
+  "cf6 cf5t"
+  ;
+}
+
+.project-site-child-cf p{
+  padding: 5vw;
+}
+
+.cf1 img, .cf2 img, .cf3 img, .cf4 img, .cf5 img, .cf6 img {width: 90%}
+.cf-intro {grid-area: cfintro; margin-right: 12vw; margin-left: 12vw;}
+.cf1 {grid-area: cf1;}
+.cf1-text {grid-area: cf1t;}
+.cf2 {grid-area: cf2;}
+.cf2-text {grid-area: cf2t;}
+.cf3 {grid-area: cf3;}
+.cf3-text {grid-area: cf3t;}
+.cf4 {grid-area: cf4;}
+.cf4-text {grid-area: cf4t;}
+.cf5 {grid-area: cf5;}
+.cf5-text {grid-area: cf5t;}
+.cf6 {grid-area: cf6;}
+
+/* ************************************ */
+
+.project-site-child-r53 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "r53intro r53intro"
+  "r531 r531t"
+  "r532t r532"
+  "r533 r533t"
+  "r534t r534"
+  "r535 r535t"
+  ;
+}
+
+.project-site-child-r53 p{
+  padding: 3vw;
+}
+
+.r531 img, .r532 img, .r533 img, .r534 img, .r535 img {width: 90%}
+.r53-intro {grid-area: r53intro; margin-right: 12vw; margin-left: 12vw;}
+.r531 {grid-area: r531;}
+.r531-text {grid-area: r531t;}
+.r532 {grid-area: r532;}
+.r532-text {grid-area: r532t;}
+.r533 {grid-area: r533;}
+.r533-text {grid-area: r533t;}
+.r534 {grid-area: r534;}
+.r534-text {grid-area: r534t;}
+.r535 {grid-area: r535;}
+.r535-text {grid-area: r535t;}
+
+/* ************************************ */
+
+.project-site-child-outro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "so2 so2"
+  "so1 so1"
+    ;
+}
+
+.project-site-child-outro p{
+  padding: 3vw;
+}
+
+.site-outro-1 img {width: 90%}
+.site-outro-1 {grid-area: so1}
+.site-outro-2 {grid-area: so2; margin-left: 15vw; margin-right: 15vw;}
+
+@media (max-device-width: 60em) {
+  .project-site-grid img {
+    min-width: 40vw;
+    padding: .5em;
+  }
+}
