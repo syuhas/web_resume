@@ -455,6 +455,11 @@ p {
   .certwrapper img {
     width: 15vw;
   }
+  .res-img {
+    grid-row: 1 / 2;
+    background-size: 90VW;
+    background-position: top;
+  }
   
 }
 
@@ -474,7 +479,7 @@ p {
 }
 
 .project-home-intro h1 {
-  font-size: clamp(20px, 3vw, 40px);
+  font-size: clamp(20px, 3vw, 30px);
   padding-bottom: 1em;
   text-decoration-line: underline;
   color: #c28422;
@@ -484,12 +489,10 @@ p {
 }
 
 .project-home-img img {
-  width: 20%;
-  background-color: white;
+  width: 60%;
   padding: .5em;
   border-radius: .5vw;
-  box-shadow: 5px 5px 10px black;
-  border: .25vw solid black;
+  /* box-shadow: 5px 5px 10px black; */
 }
 
 .project-home-intro-wrapper {
@@ -650,7 +653,7 @@ p {
   padding: 5vw;
 }
 
-.pyth img {width: 80%; padding-bottom: 1em;} .html img, .css img {width: 90%; padding-bottom: 1em;}
+.pyth img {width: 90%; padding-bottom: 1em;} .html img, .css img {width: 98%; padding-bottom: 1em; padding: .5em;}
 .html {grid-area: html;}
 .css {grid-area: css;}
 .pyth {grid-area: pyth;}
@@ -676,7 +679,7 @@ p {
   padding: 5vw;
 }
 
-.git img, .git-cmnds img {width: 90%;}
+.git img, .git-cmnds img {width: 40vw; padding: 1em;}
 .git {grid-area: git;}
 .git-text {grid-area: gt;}
 .git-cmnds {grid-area: gc;}
