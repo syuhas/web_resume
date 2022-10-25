@@ -326,7 +326,7 @@ footer img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 85vw;
-  opacity: 11%;
+  opacity: 8%;
 }
 
 .summary {
@@ -340,6 +340,11 @@ footer img {
 .summary p {
   font-size: clamp(12px, 1.25em, 16px);
   padding: 5em;
+}
+.summary span {
+  text-shadow: 2px 2px 4px black;
+  clamp(12px, 1.1em, 16px);
+  color: #D1F5FF;
 }
 
 .skills {
@@ -442,6 +447,9 @@ footer img {
   }
   .summary p {
     padding: 1.5em;
+  }
+  .summary {
+    background-size: 12em;
   }
   .tech {
     grid-row: 5 / 6;
