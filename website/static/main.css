@@ -339,6 +339,7 @@ footer img {
 
 .summary p {
   font-size: clamp(12px, 1.25em, 16px);
+  padding: 5em;
 }
 
 .skills {
@@ -359,6 +360,7 @@ footer img {
   padding-right: 1em;
   padding-left: 1em;
   padding-top: 1em;
+  font-size: clamp(12px, 1em, 16px);
 }
 
 .certs {
@@ -381,7 +383,7 @@ footer img {
 }
 .tech p {
   color: white;
-  font-size: clamp(12px, 1.25em, 14px);
+  font-size: clamp(12px, 1.15em, 14px);
   padding-top: 1em;
 }
 
@@ -437,6 +439,9 @@ footer img {
     "ed1 . . . . ed2"
   ;
     padding: .25rem;
+  }
+  .summary p {
+    padding: 1.5em;
   }
   .tech {
     grid-row: 5 / 6;
