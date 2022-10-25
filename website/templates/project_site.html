@@ -25,49 +25,74 @@
     </section>
 
     <section class="project-site-grid-child">
-        <h4>Python Flask / HTML / CSS</h4>
+        <div class="project-site-contents" id="cont">
+            <h4 style="padding-bottom: .5em;">Page Contents</h4>
+            <div class="project-site-contents-wrapper">
+                <div class="project-site-contents-child">
+                    <p><a href="#pyflask"><ul>Python / HTML / CSS</ul></a></p>
+                    <p><a href="#git"><ul>Github</ul></a></p>
+                    <p><a href="#eb"><ul>ElasticBeanstalk</ul></a></p>
+                    <p><a href="#cp"><ul>CodePipeline</ul></a></p>
+                    <p><a href="#ssl"><ul>SSL / TLS Certificate</ul></a></p>
+                </div>
+                <div class="project-site-contents-child">
+                    <p><a href="#waf"><ul>WAF ACL</ul></a></p>
+                    <p><a href="#cf"><ul>CloudFront</ul></a></p>
+                    <p><a href="#r53"><ul>Route53</ul></a></p>
+                    <p><a href="#summ"><ul>Summary</ul></a></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="project-site-grid-child">
+        <h4 class="" id="pyflask">Python Flask / HTML / CSS</h4>
         <div class="project-site-child-pyflask">
             <div class="pyth"><img src="{{ url_for('static', filename='site-python.png') }}" alt=""></div>
             <p class="pyth-text">Starting with a simple&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Python Flask</span> &nbsp;app, the necessary groundwork needed for the basic outline of the site can be built. This includes the blueprint that will link to all of the html templates to each route on the base html template.  </p>
             <div class="html"><img src="{{ url_for('static', filename='site-html.png') }}" alt=""></div>
-            <p class="html-text">Now the base&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">HTML</span> &nbsp;template can be built that will act as the basic design of the site, including the navigation bar, footer and background design. <br><br>Here,&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Bootstrap</span> &nbsp;is used for a navigation bar and the layout of the site is configured. We now have a working skeleton to add pages to. Jinja is used for the templating in Flask so we can extend the additional html stemming from this base page.</p>
+            <p class="html-text">Now the base&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">HTML</span> &nbsp;template can be written. This will act as the basic design of the site, including the navigation bar, footer and background design. <br><br>Here,&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Bootstrap</span> &nbsp;is used for a navigation bar and the layout of the site is configured. We now have a working skeleton to add pages to. Jinja is used for the templating in Flask so we can extend the additional html from this base page.</p>
             <div class="css"><img src="{{ url_for('static', filename='site-css.png') }}" alt=""></div>
             <p class="css-text">Using an external&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">CSS</span> &nbsp;stylesheet, the look of the site can be completely controlled in one place. A combination of&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Grid</span> &nbsp; template areas and&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">FlexBox</span> &nbsp;is used so the layout of the site can be further fine tuned and allow for things like media queries for viewing on different devices. This is where the bulk of the design for the site takes place.</p>
-            <p class="pyflask-outro">All of these components combined make up the front end portion of the site. In addition to using all of these elements, the site was created using a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Virtual Environment</span> &nbsp;so only the necessary&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Dependencies</span> &nbsp;are kept locally in one place. This makes things easier when creating and uploading a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">requirements.txt</span> &nbsp;file to be used with Elastic Beanstalk in the future, and ensures that no unecessary dependencies are installed.</p>
+            <p class="pyflask-outro">This is the basic concept for the front end portion of the site. In addition to using all of these elements, the site was created using a local&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Virtual Environment</span> &nbsp;so only the necessary&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">dependencies</span> &nbsp;are installed. This makes things easier when creating and uploading a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">requirements.txt</span> &nbsp;file to be used with Elastic Beanstalk in the future, and ensures that no unecessary dependencies are installed.</p>
         </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
     </section>
 
     <section class="project-site-grid-child">
-        <h4>Github</h4>
+        <h4 class="" id="git">Github</h4>
         <div class="project-site-child-github">
             <div class="git"><img src="{{ url_for('static', filename='site-git.png') }}" alt=""></div>
-            <p class="git-text">In order to sync with to the build pipeline down the line, a git repository is required. Here,&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">GitHub</span> &nbsp;is used for the repository. After creation, the local files are connected and synced with the Github repository.</p>
+            <p class="git-text">In order to sync with to the build pipeline and to implement version control, we are using a git repository. Here,&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">GitHub</span> &nbsp;is used for the repository. After creation, the local files are connected and synced with the Github repository.</p>
             <div class="git-cmnds"><img src="{{ url_for('static', filename='site-gitcmnds.png') }}" alt=""></div>
             <p class="git-cmnds-text">Now git commands are able to be used to upload changes to the repository. At the pipeline stage, these changes can then be sent to build, test and deploy stages after they are synced directly the AWS environment from the repository.</p>
         </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
     </section>
 
     <section class="project-site-grid-child">
-        <h4>Elastic Beanstalk</h4>
+        <h4 class="" id="eb">Elastic Beanstalk</h4>
         <div class="project-site-child-eb">
             <p class="eb-intro" style="padding-top: 0;">Now that the Github repository is set up, we need a place to host the Flask application.&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Elastic Beanstalk</span> &nbsp;is a one view, code-centric way of developing the site. Beanstalk makes use of templating via&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">CloudFormation</span> &nbsp;, and storing of code via&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">S3</span> &nbsp;, so all we have to worry about is uploading the code to the site manually or via a pipeline. In addition, it uses containerization on&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">EC2</span> &nbsp;, which provides support for many languages (Python in our case) and it also takes care of instance configuration, OS, health checks, and configuring load balancing behind the scenes. All that needs to be done is to make sure that the Elastic Beanstalk CLI is installed on the virtual environment we are using so that the configuration can be added when syncing to our pipeline, and that we have the proper dependencies installed and added to a requirements.txt file so Beanstalk knows what to deploy on the server.</p>
             <div class="eb1"><img src="{{ url_for('static', filename='site-eb-1.png') }}" alt=""></div>
-            <p class="eb1-text">First the Elastic Beanstalk CLI and dependencies are manually installed via pip to our virtual environment.</p>
+            <p class="eb1-text">First the Elastic Beanstalk CLI and dependencies are manually installed to our virtual environment via pip.</p>
             <div class="eb2"><img src="{{ url_for('static', filename='site-eb-2.png') }}" alt=""></div>
             <p class="eb2-text">In addition, Beanstalk requires us to add a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Requirements.txt</span> &nbsp;file to ensure that the proper dependencies are install on the server. This will be uploaded with the code to the environment.</p>
             <div class="eb3"><img src="{{ url_for('static', filename='site-eb-3.png') }}" alt=""></div>
-            <p class="eb3-text">Now the Elastic Beanstalk environment can be configured. For this application a web server environment is selected.</p>
+            <p class="eb3-text">Now the Elastic Beanstalk environment can be configured. For this application, a web server environment is selected.</p>
             <div class="eb4"><img src="{{ url_for('static', filename='site-eb-4.png') }}" alt=""></div>
-            <p class="eb4-text">Flask runs on&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Python</span> &nbsp;which is one of the AWS managed platforms used for this application.</p>
+            <p class="eb4-text">Flask runs on&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Python</span> &nbsp;which is one of the AWS managed platforms and what we will be using for this application.</p>
             <div class="eb5"><img src="{{ url_for('static', filename='site-eb-5.png') }}" alt=""></div>
             <p class="eb5-text">The environment is now configured and deployed. From now on, any changes made to the code via our git repository will flow through the pipeline to the environment and be reflected on the site.</p>
-        </div>  
+        </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>  
     </section>
 
     <section class="project-site-grid-child">
-        <h4>CodePipeline</h4>
+        <h4 class="" id="cp">CodePipeline</h4>
         <div class="project-site-child-pipeline">
-            <p class="pipe-intro" style="padding-top: 0;">For this step the Codepipeline aspect of the site is configured.&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Codebuild</span> &nbsp;and&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">CodeDeploy</span> &nbsp;steps will be added to the pipeline as the site evolves and more features are added. This will allow for more frequent changes to be made and tested without sending the changes directly to the production environment.</p>
+            <p class="pipe-intro" style="padding-top: 0;">For this step, the Codepipeline aspect of the site is configured.&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Codebuild</span> &nbsp;and&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">CodeDeploy</span> &nbsp;steps will be added to the pipeline as the site evolves and more features are added. This will allow for more frequent changes to be made and tested without sending the changes directly to the production environment.</p>
             <div class="pipe1"><img src="{{ url_for('static', filename='site-pipelinesetup-1.png') }}" alt=""></div>
             <p class="pipe1-text">The first step of setting up the pipeline is to create a service role and a name for the pipeline.</p>
             <div class="pipe2"><img src="{{ url_for('static', filename='site-pipelinesetup-2.png') }}" alt=""></div>
@@ -79,55 +104,59 @@
             <div class="pipe5"><img src="{{ url_for('static', filename='site-pipeline-deploy.png') }}" alt=""></div>
             <p class="pipe5-text">Once the pipeline is configured, we can see the source and deploy stages as they progress. The Elastic Beanstalk environment is now setup now to recieve changes through the pipeline.</p>
         </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
     </section>
 
     <section class="project-site-grid-child">
-        <h4>SSL/TLS Certificate</h4>
+        <h4 class="" id="ssl">SSL/TLS Certificate</h4>
         <div class="project-site-child-cm">
-            <p class="cm-intro" style="padding-top: 0;">Ultimately we want to distribute and cache the content on the site via&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Cloudfront</span> &nbsp;, but before we do that we want to make the site secure using&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">SSL/TLS</span> &nbsp;authentication so the site can be connected to securely via&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">HTTPS</span> &nbsp;.In order to do this we have to request a public certificate for DNS validation which can be done right on AWS. The certificate can then be deployed directly to the site.</p>
+            <p class="cm-intro" style="padding-top: 0;">Ultimately for this site, I chose to distribute and cache the content on the site via&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">CloudFront</span>. Before we do that we want to make the site secure using&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">SSL/TLS</span> &nbsp;authentication so the site can be connected to securely via&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">HTTPS</span>. In order to do this we have to request a public certificate for DNS validation which can be done right on AWS. The certificate can then be deployed to a resource of our choosing.</p>
             <div class="cm1"><img src="{{ url_for('static', filename='site-cm-1.png') }}" alt=""></div>
-            <p class="cm1-text">First a certificate is requested for&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">DNS validation</span> &nbsp;with the fully qualified domain name.</p>
+            <p class="cm1-text">First, a certificate is requested for&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">DNS validation</span> &nbsp;with the fully qualified domain name.</p>
             <div class="cm2"><img src="{{ url_for('static', filename='site-cm-2.png') }}" alt=""></div>
-            <p class="cm2-text">Now the certificate is ready to be deployed on Cloudfront.<br><br><br><br><br><br><br><br> Once deployed, we can view the certificate on the site from the CloudFront domain.</p>
+            <p class="cm2-text">Now the certificate is ready to be deployed on CloudFront.<br><br><br><br><br><br><br><br> (Later when the certificate is deployed, we can view the certificate on the site from the CloudFront domain.)</p>
             <div class="cm3"><img src="{{ url_for('static', filename='site-cm-3.png') }}" alt=""></div>
-        </div>  
+        </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>  
     </section>
 
     <section class="project-site-grid-child">
-        <h4>Web Application Firewall</h4>
+        <h4 class="" id="waf">Web Application Firewall</h4>
         <div class="project-site-child-waf">
-            <p class="waf-intro" style="padding-top: 0;">Another optional component that can be added before the Cloudfront distribution is created is a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Web ACL</span> &nbsp;, which is a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">stateless</span> &nbsp;firewall for an added layer of protection for the site.</p>
+            <p class="waf-intro" style="padding-top: 0;">Another optional component that can be added before the CloudFront distribution is created is a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Web ACL</span>, which is a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">stateless</span> &nbsp;firewall for an added layer of protection for the site.</p>
             <div class="waf1"><img src="{{ url_for('static', filename='site-waf-1.png') }}" alt=""></div>
-            <p class="waf1-text">To requisition an ACL using AWS&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">WAF</span> &nbsp;, we simply need to choose a name and resource type, in this case a Cloudfront distribution.</p>
+            <p class="waf1-text">To requisition an ACL using AWS&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">WAF</span>, we simply need to choose a name and resource type. In this case a CloudFront distribution will be our resource type.</p>
             <div class="waf2"><img src="{{ url_for('static', filename='site-waf-2.png') }}" alt=""></div>
             <p class="waf2-text">ACL rules can now be added.</p>
             <div class="waf3"><img src="{{ url_for('static', filename='site-waf-3.png') }}" alt=""></div>
             <p class="waf3-text">Now the web ACL is ready to be attached to our distribution.</p>
-        </div>  
+        </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>  
     </section>
 
     <section class="project-site-grid-child">
-        <h4>CloudFront</h4>
-        <div class="project-site-child-cf">
-            <p class="cf-intro" style="padding-top: 0;">Now that the WAF ACL and SSL/TLS certificates are set up, the CloudFront distribution can now be created. CloudFront is a way to&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">cache content at AWS edge locations</span> &nbsp;, so the content is served from those edge locations, reducing the load on the origin server.</p>
+        <h4 class="" id="cf">CloudFront</h4>
+        <div class="project-site-child-cf" id="section2">
+            <p class="cf-intro" style="padding-top: 0;">Now that the WAF ACL and SSL/TLS certificates are set up, the CloudFront distribution can be created. CloudFront is a way to&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">cache content at AWS edge locations</span> &nbsp;, so the content is served from those edge locations, reducing the load on the origin server.</p>
             <div class="cf1"><img src="{{ url_for('static', filename='site-cf-1.png') }}" alt=""></div>
             <p class="cf1-text">To create our distribution, an&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">origin domain</span> &nbsp;must be selected. In this case it will be our previously configured Elastic Beanstalk domain for our web app environment.</p>
             <div class="cf2"><img src="{{ url_for('static', filename='site-cf-2.png') }}" alt=""></div>
             <p class="cf2-text">For the default cache behavior, the default&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">path pattern</span> &nbsp;is used meaning <span style="font-style: italic;">all files</span> will be cached on the site. This cannot be changed after creation, but if required it could be determined which types of files or directories will be cached. <br><br> For the&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">viewer protocol policy</span> &nbsp;, we want to direct HTTP to HTTPS since we have previously configured the SSL/TLS certificate for the site. <br><br>The cache policy will be a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">caching optimized</span> &nbsp;policy. This is set to a TTL of 86,400 seconds(one day) with a maximum of one year.</p>
             <div class="cf3"><img src="{{ url_for('static', filename='site-cf-3.png') }}" alt=""></div>
-            <p class="cf3-text">Next, a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">price class</span> &nbsp;is chosen. In case all edge locations are used but the option to limit to certain regions is available which can lower costs for the service.<br><br>Now the&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Web ACL</span> &nbsp;that was previously confgured can be added to the distribution as well.</p>
+            <p class="cf3-text">Next, a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">price class</span> &nbsp;is chosen. I chose to use all edge locations but the option to limit to certain regions is available. This can lower costs for the service.<br><br>Now the&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Web ACL</span> &nbsp;that was previously confgured can be added to the distribution as well.</p>
             <div class="cf4"><img src="{{ url_for('static', filename='site-cf-4.png') }}" alt=""></div>
-            <p class="cf4-text">The&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">SSL/TLS</span> &nbsp;certificate that we requested previously can now be deployed onto the distribution.</p>
+            <p class="cf4-text">Additionaly, the&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">SSL/TLS</span> &nbsp;certificate that we requested previously can now be deployed onto the distribution.</p>
             <div class="cf5"><img src="{{ url_for('static', filename='site-cf-5.png') }}" alt=""></div>
             <p class="cf5-text">The CloudFront distribution can now be created. We now have a fully operational distribution with a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">firewall</span> &nbsp;that can be visited securely over HTTPS port 443 via our&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">SSL/TLS</span> &nbsp;certificate.</p>
             <div class="cf6"><img src="{{ url_for('static', filename='site-cf-6.png') }}" alt=""></div>
-        </div>  
+        </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>  
     </section>
 
     <section class="project-site-grid-child">
-        <h4>Route 53</h4>
+        <h4 class="" id="r53">Route 53</h4>
         <div class="project-site-child-r53">
-            <p class="r53-intro" style="padding-top: 0;">The final aspect to the site is setting up the&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">DNS</span> &nbsp;services with&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Route53</span> &nbsp;. With Route53, we can&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">purchase a domain name</span> &nbsp;, create&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">hosted zones</span> &nbsp;and then create&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">records</span> &nbsp;to route all traffic visiting the domain directly to our CloudFront distribution.</p>
+            <p class="r53-intro" style="padding-top: 0;">The final aspect to the site is setting up the&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">DNS</span> &nbsp;services with&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Route53</span> &nbsp;. With Route53, we can&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">purchase a domain name</span> &nbsp;, create a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">hosted zone</span> &nbsp;and then create&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">records</span> &nbsp;to route all traffic visiting the domain directly to our CloudFront distribution.</p>
             <div class="r531"><img src="{{ url_for('static', filename='site-r53-1.png') }}" alt=""></div>
             <p class="r531-text">To purchase a&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">domain name</span> &nbsp;through Route53 we simply need to enter the desired name and check that it is available. In this case I chose&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">www.DigitalSteve.net</span> &nbsp;as an example for this project.</p>
             <div class="r532"><img src="{{ url_for('static', filename='site-r53-2.png') }}" alt=""></div>
@@ -135,17 +164,19 @@
             <div class="r533"><img src="{{ url_for('static', filename='site-r53-3.png') }}" alt=""></div>
             <p class="r533-text">A&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">hosted zone</span> &nbsp;must then be created for the domain name so we can add records to route traffic visiting the domain.</p>
             <div class="r534"><img src="{{ url_for('static', filename='site-r53-4.png') }}" alt=""></div>
-            <p class="r534-text">Finally,&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">Records</span> &nbsp;can now be added to the hosted zone to route traffic from the domain names to a destination. Two records are added, one for the domain name without the subdomain and one for the fully qualified domain name. For the routing, an&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;"> Alias A Record</span> &nbsp;is used to route the domain directly to an AWS service, in this case our CloudFront distribution for both records.</p>
+            <p class="r534-text">Finally,&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;">records</span> &nbsp;can now be added to the hosted zone to route traffic from the domain names to a destination. Two records are added, one for the domain name without the subdomain and one for the fully qualified domain name. For the routing, an&nbsp; <span style="color: #c28422; text-shadow: 2px 2px 5px black;"> Alias A Record</span> &nbsp;is used to route the domain directly to an AWS service, that service being our CloudFront distribution for both records.</p>
             <div class="r535"><img src="{{ url_for('static', filename='site-r53-5.png') }}" alt=""></div>
-        </div>  
+        </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>  
     </section>
 
     <section class="project-site-grid-child">
-        <h4>Summary</h4>
+        <h4 class="" id="summ">Summary</h4>
         <div class="project-site-child-outro">
             <div class="site-outro-1"><img src="{{ url_for('static', filename='site-outro-1.png') }}" alt=""></div>
-            <p class="site-outro-2">This was a great learning experience from start to finish. Many aspects were involved, from site design with CSS and HTML to all of the AWS services used to get the site up and running. Learning to code a Flask app with Python and working with templating was extremely educational as well as learning some photoshop basics to make a logo. The best part about this project is that can be added to and changed indefinitely as projects and features are added. <br><br>I had a great experience making this site, I learned a lot and I hope you enjoyed the overview!<br><br><br><span style="opacity: 30%; font-style: italic;">~Steve</span></p>
-        </div>  
+            <p class="site-outro-2">This was a great learning experience from start to finish. This project contained many aspects, from site design with CSS and HTML to all of the AWS services used to get the site up and running on the web. Learning to code a Flask app with Python and working with templating was extremely educational as well as learning some photoshop basics to make a logo. The best part about this project is that can be added to and changed indefinitely as projects and features are added. <br><br>I had a great experience making this site, I learned a lot and I hope you enjoyed the overview!<br><br><br><span style="opacity: 30%; font-style: italic;">~Steve</span></p>
+        </div>
+        <h6 class="btt"> <a href="#cont">Back to Top</a></h6>  
     </section>
 
 </div>
