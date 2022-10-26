@@ -115,7 +115,7 @@ footer img {
 }
 
 .grid-name-title p, .grid-welcome p {
-  font-size: clamp(13px, 2vw, 18px);
+  font-size: clamp(14px, .9vw, 16px);
 }
 
 .grid-name-title {
