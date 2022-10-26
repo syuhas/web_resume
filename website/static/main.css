@@ -239,8 +239,8 @@ footer img {
     padding-block: .5em;
     gap: 1em;
     grid-template-areas:
-    ". g1 . . . . g2 ."
-    ". w1 . . . . w2 ."
+    "g1 . . . . . . g2"
+    "w1 . . . . . . w2"
     ". . . . iot1 . . iot2 "
     "m1 . . . . . m2 ."
     "c1 . . . . . . c2"
@@ -263,6 +263,8 @@ footer img {
     padding-left: 1em;
     padding-right: 1em;
   }
+
+  .grid-welcome p {text-align: left; padding-left: 5vw; padding-right: 5vw;}
   
   .grid-iot {
     grid-row: 3 / 6;
