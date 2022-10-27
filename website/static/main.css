@@ -330,15 +330,17 @@ footer img {
 
 .resume_parent h1 {
   color: #1fa2f3;
-  text-shadow: 5px 5px 10px black;
+  text-shadow: 2px 2px 1px black;
   font-size: clamp(18px, 3vw, 30px);
+  font-family: 'Roboto', sans-serif;
 }
 
 .resume_parent h4 {
   color: #1fa2f3;
-  text-shadow: 5px 5px 10px black;
+  text-shadow: 2px 2px 1px black;
   font-size: clamp(14px, 2.25vw, 20px);
   text-decoration-line: underline;
+  font-family: 'Roboto', sans-serif;
 }
 
 .res-title,
@@ -349,7 +351,7 @@ footer img {
 .exp,
 .edu {
   background-color: #3B5367;
-  border: .25vh solid black;
+  border: .003vh solid #c28422;
   box-shadow: 5px 5px 10px black;
   border-radius: .5em;
   padding: 1.5em;
@@ -360,7 +362,7 @@ footer img {
   grid-row: 1 / 2;
   grid-column: res1 / res2;
   text-align: center;
-  letter-spacing: .1em;
+  letter-spacing: .2em;
   font-style: italic;
   padding-right: 8vw;
 }
@@ -392,7 +394,7 @@ footer img {
 .summary span {
   text-shadow: 2px 2px 4px black;
   font-size: inherit;
-  color: #D1F5FF;
+  color: #68e0f8;
 }
 
 .skills {
@@ -556,6 +558,9 @@ footer img {
   width: 33%;
   order: 2;
 }
+.project-home-img2 img {
+  box-shadow: 2px 2px 5px black;
+}
 .project-home-img3 {
   width: 33%;
   order: 3;
@@ -586,20 +591,26 @@ footer img {
   padding-bottom: 10em;
 }
 
-.project-links h4 {
-  text-decoration-line: underline;
-  color: #c28422;
-  text-shadow: 5px 5px 10px black;
+.project-links p {
+  color: white;
+  font-size: clamp(12px, .95vw, 16px);
+  padding: 2em;
+  padding-top: .5em;
+}
+
+.project-links a {
+  color: #1fa2f3;
+  text-shadow: 2px 2px 1px black;
   font-style: italic;
   text-align: center;
 }
 
 .project-links a:link {
-  color: turquoise;
+  color: #1fa2f3;
 }
 
 .project-links a:visited {
-  color: turquoise;
+  color: #1fa2f3;
 }
 
 .project-links a:hover {
@@ -668,16 +679,17 @@ footer img {
 
 .project-site-contents {
   text-align: left;
+  text-shadow: 2px 2px 1px black;
 }
 
 .project-site-contents a:link {
-  color: turquoise;
+  color: #D1F5FF;
 }
 .project-site-contents a:visited {
-  color: turquoise;
+  color: #D1F5FF;
 }
 .project-site-contents a:hover {
-  color: #D1F5FF;
+  color: #1fa2f3;
 }
 
 .project-site-contents-wrapper {
@@ -693,13 +705,14 @@ footer img {
 .btt {
   padding: 2vw;
   text-align: center;
+  text-shadow: 2px 2px 1px black;
   font-size: clamp(10px, 1.5vw, 18px);
 }
 .btt a:link {
-  color: turquoise;
+  color: #1fa2f3;
 }
 .btt a:visited {
-  color: turquoise;
+  color: #1fa2f3;
 }
 .btt a:hover {
   color: #D1F5FF;
