@@ -94,7 +94,8 @@ footer img {
   ". . . . w1 . w2 ."
   "m1 . . . m2 . . ."
   "ct1 . . . . . . ct2"
-  "c1 . . . . . . c2";
+  "c1 . . . . . . c2"
+  "cc1 . . cc2 . . . .";
 }
 
 .grid-name-title h1, .grid-name-title h2 {
@@ -181,6 +182,13 @@ footer img {
   width: 100%;
 }
 
+.grid-credlycerts {
+  grid-row: 4 / 5;
+  grid-column: cc1 / cc2;
+  display: flex;
+  justify-content: center;
+}
+
 /* home/base breakpoint mid screen *****************************************************************************************************************************************************************/
 
 @media (max-width: 1550px) {
@@ -192,7 +200,8 @@ footer img {
     ". . . w1 . . w2 ."
     "m1 . . m2 . . . ."
     "ct1 . . . . . . ct2"
-    "c1 . . . . . . c2";
+    "c1 . . . . . . c2"
+    "cc1 . . . . . . cc2";
   }
 }
 
@@ -244,8 +253,10 @@ footer img {
     ". . . . iot1 . . iot2 "
     "m1 . . . . . m2 ."
     "c1 . . . . . . c2"
-    "ct1 . . . . . . ct2";
-    
+    "ct1 . . . . . . ct2"
+    "cc1 . . . . . . cc2";
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
 
