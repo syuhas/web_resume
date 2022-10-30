@@ -116,7 +116,7 @@ footer img {
 }
 
 .grid-name-title p, .grid-welcome p {
-  font-size: clamp(14px, .9vw, 16px);
+  font-size: clamp(14px, .8vw, 16px);
 }
 
 .grid-name-title {
@@ -152,10 +152,10 @@ footer img {
   grid-column: m1 / m2;
   background-image: url(../static/cloudmap.png);
   background-position: bottom;
-  background-size: 50vw;
+  background-size: 47vw;
   background-repeat: no-repeat;
   background-position: top;
-  opacity: 55%;
+  opacity: 50%;
 }
 
 .grid-iot {
@@ -180,6 +180,7 @@ footer img {
   border: 2px solid black;
   background-color:#3B5367;
   width: 100%;
+  max-height: 25vw;
 }
 
 .grid-credlycerts {
@@ -251,7 +252,7 @@ footer img {
     "g1 . . . . . . g2"
     "w1 . . . . . . w2"
     ". . . . iot1 . . iot2 "
-    "m1 . . . . . m2 ."
+    "m1 . . . . . . m2"
     "c1 . . . . . . c2"
     "ct1 . . . . . . ct2"
     "cc1 . . . . . . cc2";
@@ -391,7 +392,7 @@ footer img {
   font-size: inherit;
   padding: 5em;
 }
-.summary span {
+.summary span, .tech span {
   text-shadow: 2px 2px 4px black;
   font-size: inherit;
   color: #68e0f8;
