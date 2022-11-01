@@ -338,7 +338,7 @@ footer img {
 
 .resume_parent h4 {
   color: #1fa2f3;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 4px 4px 6px black;
   font-size: clamp(14px, 2.25vw, 20px);
   text-decoration-line: underline;
   font-family: 'Roboto', sans-serif;
@@ -391,6 +391,8 @@ footer img {
 .summary p {
   font-size: inherit;
   padding: 5em;
+  padding-left: 8em;
+  padding-right: 8em;
 }
 .summary span, .tech span {
   text-shadow: 2px 2px 4px black;
@@ -404,6 +406,8 @@ footer img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "sc1 sc2";
+  padding-right: 8em;
+  padding-left: 8em;
 }
 .skillchild {grid-area: sc1;}
 .skillchild2 {grid-area: sc2;}
@@ -550,30 +554,37 @@ footer img {
 .project-home-img-wrapper {
   display: flex;
   flex-wrap: wrap;
+  border: .25vw solid black;
+  border-radius: 1em;
+  background-color: whitesmoke;
+  opacity: 90%;
 }
 .project-home-img1 {
   width: 33%;
   order: 1;
+  padding-top: 2em;
 }
 .project-home-img2 {
   width: 33%;
   order: 2;
 }
-.project-home-img2 img {
-  box-shadow: 2px 2px 5px black;
+.project-home-img2 img, .project-home-img1 img, .project-home-img3 img {
+  background-color: whitesmoke;
+  border-radius: 1em;
 }
 .project-home-img3 {
   width: 33%;
   order: 3;
+  padding-top: 1em;
 }
 .project-home-img-wrapper img {
   width: 100%;
-  border-radius: 2em;
+  
 }
 
 .project-home-intro-wrapper {
   background-color: #3B5367;
-  border: .1vw solid #c28422;
+  border: .02vh solid #c28422;
   border-radius: .5em;
   padding: 1em;
 }
@@ -590,6 +601,7 @@ footer img {
   display: block;
   padding-top: 1em;
   padding-bottom: 10em;
+  text-align: left;
 }
 
 .project-links p {
@@ -601,7 +613,7 @@ footer img {
 
 .project-links a {
   color: #1fa2f3;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 2px 2px 4px black;
   font-style: italic;
   text-align: center;
 }
