@@ -4,12 +4,10 @@
 .project-site-body {
     background-image: none;
     background-color: #343a40;
-  }
-  .imgwrapper {
     background-image: url(../home-imgs/techy2.png);
     background-repeat: no-repeat;
+    background-size: 60vw;
   }
-  
   .project-site-intro h1 {
     font-size: clamp(10px, 3vw, 30px);
     padding-bottom: 1em;

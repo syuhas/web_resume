@@ -1,11 +1,9 @@
 .project-cdk-body {
     background-image: none;
     background-color: #343a40;
-}
-
-.imgwrapper {
     background-image: url(../home-imgs/techy2.png);
     background-repeat: no-repeat;
+    background-size: 60vw;
 }
 
 .project-cdk-intro h1 {
