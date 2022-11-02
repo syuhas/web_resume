@@ -4,6 +4,8 @@
 {% block title %}Projects{% endblock %} 
 {% block head %}
 
+{{ super() }}
+
 {% endblock %}
 {% block content %}
 
@@ -12,19 +14,21 @@
         <h1>Projects</h1>
         <div class="project-home-img-wrapper">
             <section class="project-home-img1">
-                <img src="{{ url_for('static', filename='idea.png') }}" alt="">
+                <img src="{{ url_for('static', filename='home-imgs/idea.png') }}" alt="">
             </section>
             <section class="project-home-img2">
-                <img src="{{ url_for('static', filename='plan.png') }}" alt="">
+                <img src="{{ url_for('static', filename='home-imgs/plan.png') }}" alt="">
             </section>
             <section class="project-home-img3">
-                <img src="{{ url_for('static', filename='project-home2.png') }}" alt="">
+                <img src="{{ url_for('static', filename='home-imgs/project-home2.png') }}" alt="">
             </section>
         </div>
         
         <div class="project-links">
-            <a href="/project_site">How I Made This Site</a>
+            <a href="/project-site">How I Made This Site</a>
             <p>An explanation of how this site was made with all of the resources used. This project highlights how basic AWS services can be used to build a web site or web app with Elastic Beanstalk.</p>
+            <a href="/project-cdk">AWS CDK Install and Simple Stack Creation</a>
+            <p>Coming Soon!</p>
         </div>
     </div>
 </main>

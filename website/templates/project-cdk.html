@@ -1,0 +1,62 @@
+
+{% extends "base.html" %} 
+
+{% block title %}Project - Website{% endblock %} 
+{% block head %}
+
+{{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project-cdk.css') }}">
+
+{% endblock %}
+{% block content %}
+<body class="project-cdk-body">
+<div class="imgwrapper">
+<header class="project-cdk-intro">
+<div class="project-cdk-intro-wrapper">
+    <h1>AWS CDK</h1>
+    <section class="project-cdk-img">
+        <p><img src="{{ url_for('static', filename='cdk-logo.png') }}" alt=""></p>
+        <p><img src="{{ url_for('static', filename='CDKDemo.png') }}" alt=""></p>
+    </section>
+</div>
+</header>
+</div>
+
+
+<!-- <div class="project-cdk-grid">
+    <section class="project-cdk-grid-child">
+        <h4>Overview</h4>
+        <p style="margin-left: 5vw; margin-right: 5vw;">This site was built not only to start compiling completed projects into one place, but also because the site is a project in and of itself. 
+            It has been built from the ground up using AWS for features like hosting, CI/CD aspects, DNS services, load balancing, caching and TLS authentication. In addition to this I have coded 
+            all the Python, HTML and CSS via a Flask app which is lightweight and gives the freedom to add features in the future as desired. For me, this project was not only a great way to display 
+            all of the content and projects I have completed but also is a effective way to display some of the many capabilities of AWS when it comes to building a website or web app. In addition, 
+            this has been a fanstastic learning experience to pull together all of the things I have learned in AWS and coding. In this overview of the site I will review all of the core pieces of the development of the site.</p>
+    </section>
+
+    <section class="project-cdk-grid-child">
+        <div class="project-site-contents" id="cont">
+            <h4 style="padding-bottom: .5em;">Page Contents</h4>
+            <div class="project-cdk-contents-wrapper">
+                <div class="project-site-contents-child">
+                    <p><a href="#pyflask"><ul>Python / HTML / CSS</ul></a></p>
+                    <p><a href="#git"><ul>Github</ul></a></p>
+                    <p><a href="#eb"><ul>ElasticBeanstalk</ul></a></p>
+                    <p><a href="#cp"><ul>CodePipeline</ul></a></p>
+                    <p><a href="#ssl"><ul>SSL / TLS Certificate</ul></a></p>
+                </div>
+                <div class="project-cdk-contents-child">
+                    <p><a href="#waf"><ul>WAF ACL</ul></a></p>
+                    <p><a href="#cf"><ul>CloudFront</ul></a></p>
+                    <p><a href="#r53"><ul>Route53</ul></a></p>
+                    <p><a href="#summ"><ul>Summary</ul></a></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div> -->
+</body>
+
+{% endblock %}

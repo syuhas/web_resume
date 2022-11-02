@@ -17,7 +17,11 @@ def projects():
 def resume():
     return render_template('resume.html')
 
-@views.route('/project_site')
+@views.route('/project-site')
 def project_site():
-    return render_template('project_site.html')
+    return render_template('project-site.html')
+
+@views.route('/project-cdk')
+def project_cdk():
+    return render_template('project-cdk.html')
 
