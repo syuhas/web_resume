@@ -525,6 +525,9 @@ footer img {
     background-size: 90VW;
     background-position: top;
   }
+  .skills {
+    padding: 1.5em;
+  }
   
 }
 
