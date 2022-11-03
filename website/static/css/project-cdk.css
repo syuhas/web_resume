@@ -1,13 +1,12 @@
 .project-cdk-body {
     background-image: none;
     background-color: #343a40;
-    background-image: url(../home-imgs/techy2.png);
     background-repeat: no-repeat;
     background-size: 60vw;
 }
 
 .project-cdk-intro h1 {
-    font-size: clamp(10px, 3vw, 30px);
+    font-size: clamp(16px, 3vw, 30px);
     padding-bottom: 1em;
     color: #c28422;
     text-shadow: 2px 2px 10px black;
@@ -19,8 +18,8 @@
 .project-cdk-intro {
     display: block;
     padding-top: 2em;
-    padding-right: 20%;
-    padding-left: 20%;
+    padding-right: 15%;
+    padding-left: 15%;
 }
 
 .project-cdk-intro-wrapper {
@@ -28,6 +27,7 @@
     border: .1vw solid black;
     border-radius: .5em;
     padding: 1em;
+    background-image: url(../home-imgs/techy2.png);
 }
 
 
@@ -59,6 +59,8 @@
 .project-cdk-contents a:hover {
     color: #1fa2f3;
 }
+.gitlink a:link, .gitlink a:visited {color: rgb(42, 200, 50);}
+.gitlink a:hover {color: #1fa2f3;}
 
 .project-cdk-contents-wrapper {
     display: flex;
@@ -88,7 +90,7 @@
 
 
 .project-cdk-grid h4 {
-    font-size: clamp(14px, 2.5vw, 24px);
+    font-size: clamp(11px, 2.5vw, 24px);
     font-style: italic;
     text-decoration-line: underline;
     color: #c28422;
@@ -99,7 +101,7 @@
     padding-left: 4vw;
 }
 .project-cdk-grid p {
-    font-size: clamp(9px, 1.5vw, 14px);
+    font-size: clamp(7px, 1.5vw, 14px);
     text-align: left;
     padding-left: 5vw;
     padding-right: 5vw;
@@ -110,10 +112,12 @@
     gap: 4em;
     color: white;
     margin-top: 2em;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: 10vw;
 }
+
+.project-cdk-grid span {text-shadow: 2px 2px 4px black; color: #c28422;}
 
 .project-cdk-grid-child {
     background-color: #3B5367;
@@ -124,4 +128,177 @@
     padding-bottom: 2vw;
 }
 
+
 .project-cdk-grid-child img {width: 90%;}
+
+/* ***************************************************** */
+
+.project-cdk-child-inst {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "ii ii"
+    "ts tst"
+    "cdkt cdk"
+    ;
+  }
+  .project-cdk-child-inst p {
+    padding: 4vw;
+  }
+  
+  .inst-intro {grid-area: ii; margin-left: 6vw; margin-right: 6vw;}
+  .inst-ts {grid-area: ts;}
+  .inst-ts-text {grid-area: tst;}
+  .inst-cdk {grid-area: cdk;}
+  .inst-cdk-text {grid-area: cdkt;}
+
+/* ***************************************************** */
+
+.project-cdk-child-bs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "bsi bsi"
+    "bs1 bs1t"
+    "bs2t bs2"
+    "bs3 bs3t"
+    "bs4t bs4"
+    "bs5t bs5"
+    ;
+    gap: 1em;
+  }
+.project-cdk-child-bs p {
+    padding: 4vw;
+  }
+  
+.bsi {grid-area: bsi; margin-left: 6vw; margin-right: 6vw;}
+.bs1 {grid-area: bs1;}
+.bs1t {grid-area: bs1t;}
+.bs2 {grid-area: bs2;}
+.bs2t {grid-area: bs2t;}
+.bs3 {grid-area: bs3;}
+.bs3t {grid-area: bs3t;}
+.bs4 {grid-area: bs4;}
+.bs4t {grid-area: bs4t;}
+.bs5 {grid-area: bs5;}
+.bs5t {grid-area: bs5t;}
+
+/* ***************************************************** */
+
+.project-cdk-child-df {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "dfi dfi"
+    "df1 df1t"
+    "df2t df2"
+    "df3 df3t"
+    ;
+    gap: 1em;
+  }
+.project-cdk-child-df p {
+    padding: 4vw;
+  }
+  
+.dfi {grid-area: dfi; margin-left: 6vw; margin-right: 6vw;}
+.df1 {grid-area: df1;}
+.df1t {grid-area: df1t;}
+.df2 {grid-area: df2;}
+.df2t {grid-area: df2t;}
+.df3 {grid-area: df3;}
+.df3t {grid-area: df3t;}
+
+/* ***************************************************** */
+
+.project-cdk-child-dp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "dpi dpi dpi dpi"
+    "dp1 dp1 dp1t dp1t"
+    "dp2t dp2 dp2 dp2"
+    "dp3 dp3 dp3t dp3t"
+    "dp4t dp4t dp4 dp4"
+    "dp5t dp5t dp5 dp5"
+    ;
+    gap: 1em;
+  }
+.project-cdk-child-dp p {
+    padding: 4vw;
+  }
+  
+.dpi {grid-area: dpi; margin-left: 6vw; margin-right: 6vw;}
+.dp1 {grid-area: dp1;}
+.dp1t {grid-area: dp1t;}
+.dp2 {grid-area: dp2;}
+.dp2t {grid-area: dp2t;} .project-cdk-child-dp p.dp2t {padding: 0; padding-top: 4em; padding-left: 2em;}
+.dp3 {grid-area: dp3;}
+.dp3t {grid-area: dp3t;}
+.dp4 {grid-area: dp4;}
+.dp4t {grid-area: dp4t;}
+.dp5 {grid-area: dp5;}
+.dp5t {grid-area: dp5t;}
+
+/* ***************************************************** */
+
+.project-cdk-child-c {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "c c c c";
+  }
+.project-cdk-child-c p {
+    padding: 0;
+  }
+  
+.c {grid-area: c; margin-left: 10vw; margin-right: 10vw;}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 60em) {
+    .project-cdk-grid img {
+      min-width: 40vw;
+      padding: .5em;
+    }
+    .project-cdk-img img {
+      width: 100%;
+    }
+    .project-cdk-grid {
+      gap: 2em;
+      padding-left: .5em;
+      padding-right: .5em;
+      width: 100%;
+      background-image: url(../home-imgs/techy2.png);
+    }
+  
+    .project-cdk-intro {
+      padding: 0;
+      padding-top: 1em;
+      
+    }
+  
+    .project-cdk-contents-wrapper {
+      display: block;
+    }
+  
+  
+    .project-cdk-grid-child img {
+      width: 100%;
+      padding: 0;
+    }
+    .project-cdk-child p {
+      padding: 0;
+    }
+    .project-cdk-intro-wrapper {
+        background-image: url(../home-imgs/techy2.png);
+    }
+  }

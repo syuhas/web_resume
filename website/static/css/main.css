@@ -83,7 +83,7 @@ footer img {
 
 .intro-grid {
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   display: grid;
   text-align: center;
   gap: 2em;
@@ -140,7 +140,7 @@ footer img {
   padding-top: 2em;
   border-radius: 2em;
   box-shadow: 5px 5px 10px black;
-  padding: 5em;
+  padding: 4em;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #3B5367;
@@ -590,6 +590,7 @@ footer img {
   border: .02vh solid #c28422;
   border-radius: .5em;
   padding: 1em;
+  background-image: url(../home-imgs/techy2.png);
 }
 
 .project-home-text {
@@ -609,7 +610,7 @@ footer img {
 
 .project-links p {
   color: white;
-  font-size: clamp(12px, .95vw, 16px);
+  font-size: clamp(12px, .75vw, 16px);
   padding: 2em;
   padding-top: .5em;
 }
@@ -619,6 +620,7 @@ footer img {
   text-shadow: 2px 2px 4px black;
   font-style: italic;
   text-align: center;
+  font-size: clamp(12px, .85vw, 30px);
 }
 
 .project-links a:link {

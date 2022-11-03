@@ -4,12 +4,11 @@
 .project-site-body {
     background-image: none;
     background-color: #343a40;
-    background-image: url(../home-imgs/techy2.png);
     background-repeat: no-repeat;
     background-size: 60vw;
   }
   .project-site-intro h1 {
-    font-size: clamp(10px, 3vw, 30px);
+    font-size: clamp(14px, 3vw, 30px);
     padding-bottom: 1em;
     color: #c28422;
     text-shadow: 2px 2px 10px black;
@@ -21,8 +20,8 @@
   .project-site-intro {
     display: block;
     padding-top: 2em;
-    padding-right: 20%;
-    padding-left: 20%;
+    padding-right: 15%;
+    padding-left: 15%;
   }
   
   .project-site-intro-wrapper {
@@ -30,6 +29,7 @@
     border: .1vw solid black;
     border-radius: .5em;
     padding: 1em;
+    background-image: url(../home-imgs/techy2.png);
   }
   
   
@@ -59,6 +59,9 @@
   .project-site-contents a:hover {
     color: #1fa2f3;
   }
+
+  .gitlink a:link, .gitlink a:visited {color: rgb(42, 200, 50     );}
+  .gitlink a:hover {color: #1fa2f3;}
   
   .project-site-contents-wrapper {
     display: flex;
@@ -88,7 +91,7 @@
   
   
   .project-site-grid h4 {
-    font-size: clamp(14px, 2.5vw, 24px);
+    font-size: clamp(10px, 2.5vw, 24px);
     font-style: italic;
     text-decoration-line: underline;
     color: #c28422;
@@ -110,8 +113,8 @@
     gap: 4em;
     color: white;
     margin-top: 2em;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-bottom: 10vw;
   }
   
