@@ -24,7 +24,7 @@
 
 .project-cdk-intro-wrapper {
     background-color: #3B5367;
-    border: .1vw solid black;
+    border: .1vw solid #c28422;
     border-radius: .5em;
     padding: 1em;
     background-image: url(../home-imgs/techy2.png);
@@ -127,7 +127,7 @@
 
 .project-cdk-grid-child {
     background-color: #3B5367;
-    border: .1vw solid black;
+    border: .1vw solid #c28422;
     border-radius: .5em;
     padding-top: .5em;
     text-align: center;
