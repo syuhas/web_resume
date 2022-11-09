@@ -28,6 +28,7 @@
     border-radius: .5em;
     padding: 1em;
     background-image: url(../home-imgs/techy2.png);
+    background-repeat: no-repeat;
 }
 
 
@@ -37,13 +38,18 @@
     display: block;
 }
 .project-cdk-img p {
-    padding: 2em;
+    padding: 1em;
 }
 
 .project-cdk-img img {
-    width: 60%;
+    width: 40%;
     background-color: white;
 }
+
+.img2 img {
+  width: 60%;
+}
+
 
 .project-cdk-contents {
     text-align: left;

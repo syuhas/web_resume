@@ -26,10 +26,11 @@
   
   .project-site-intro-wrapper {
     background-color: #3B5367;
-    border: .1vw solid black;
+    border: .1vw solid #c28422;
     border-radius: .5em;
     padding: 1em;
     background-image: url(../home-imgs/techy2.png);
+    background-repeat: no-repeat;
   }
   
   
@@ -60,7 +61,7 @@
     color: #1fa2f3;
   }
 
-  .gitlink a:link, .gitlink a:visited {color: rgb(42, 200, 50     );}
+  .gitlink a:link, .gitlink a:visited {color: rgb(42, 200, 50);}
   .gitlink a:hover {color: #1fa2f3;}
   
   .project-site-contents-wrapper {
@@ -120,7 +121,7 @@
   
   .project-site-grid-child {
     background-color: #3B5367;
-    border: .1vw solid black;
+    border: .1vw solid #c28422;
     border-radius: .5em;
     padding-top: .5em;
     text-align: center;
@@ -128,6 +129,7 @@
   }
   
   .project-site-grid-child img {width: 90%;}
+  .highlights {color: #c28422; text-shadow: 2px 2px 5px black}
   
   /* ************************** */
   

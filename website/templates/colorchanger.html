@@ -1,0 +1,65 @@
+
+{% extends "base.html" %} 
+
+{% block title %}Test{% endblock %} 
+{% block head %}
+    {{ super() }}
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+
+<script>
+
+$(document).ready(function(){
+    $("#btn2").hide();
+});
+
+$(document).ready(function(){
+    $("#btn1").click(function(){
+      $("#hideme").hide(350);
+      $("#btn2").show(350);
+});
+});
+
+$(document).ready(function(){
+    $("#btn2").click(function(){
+        $("#hideme").show(350);
+        $("#btn2").hide(350);
+    });
+});
+
+function changeIt()
+{
+    $("#base").css({"background-image": "none", "background-color": "blue"});
+}
+function changeItAgain()
+{
+    $("#base").css({"background-image": "none", "background-color": "red"});
+}
+function changeItBack()
+{
+    $('#base').css({"background-color": "none", "background-image": 'url(' + "{{ url_for('static', filename='home-imgs/bg-bl-bl.jpg') }}" + ')'});
+}
+</script>
+
+{% endblock %}
+{% block content %}
+<div class="changer-grid">
+    <section>
+        <p><button class="one" onclick="changeIt()">Click Me to Change to Blue</button></p>
+        <p><button class="two" onclick="changeItAgain()">Click Me to Change to Red</button></p>
+        <p><button class="three" onclick="changeItBack()">Click Me to Change it Back</button></p>
+    </section>
+    <section>
+        <div id="hideme">
+            <p><button id="btn1">Click Here to Hide the Picture</button></p>
+            <p><img style="width: 10vw;" src="{{ url_for('static', filename='home-imgs/jq.png')}}" alt=""></p>
+        </div>
+        <p><button id="btn2">Click Here to Make it Come Back</button></p>
+    </section>
+    
+</div>
+
+
+
+
+{% endblock %}

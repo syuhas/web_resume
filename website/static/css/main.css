@@ -8,6 +8,15 @@
 * {box-sizing: border-box;}
 .navbar-nav {
   text-shadow: 2px 2px 3px black;
+  color: #1fa2f3;
+}
+.navbar {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.navwrap {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  box-shadow: 0px 2px 15px black;
 }
 .navwrap img{
   height: clamp(70px, 8vw, 100px);
@@ -16,17 +25,13 @@
 /* ********************************************************************************************************************************************************************************************* */
 /* body all pages *******************************************************************************************************************************************************************************/
 
-body {
+.main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-image: url(../home-imgs/bg-bl-bl.jpg);
   background-size: cover;
-}
-
-.main {
-  font-family: 'Red Hat Display', sans-serif;
-  
+  font-family: 'Roboto', sans-serif;
 }
 
 /* footer all pages *************************************************************************************************************************************************************************** */
@@ -41,6 +46,7 @@ footer {
   padding-bottom: 1vh;
   display: grid;
   justify-content: center;
+  box-shadow: 0px -5px 8px black;
 }
 
 .footer-text {
@@ -82,36 +88,30 @@ footer img {
 /*home page start ************************************************************************************************************************************************************************************ */
 
 .intro-grid {
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 270px 270px 1fr 1fr 1fr 1fr;
   display: grid;
   text-align: center;
   gap: 2em;
   padding-block-start: 1em;
   grid-template-areas:
-  ". . . . iot1 . . iot2"
-  ". g1 . . . g2 . ."
-  ". . . . w1 . w2 ."
-  "m1 . . . m2 . . ."
-  "ct1 . . . . . . ct2"
-  "c1 . . . . . . c2"
-  "cc1 . . cc2 . . . .";
+  ". . . . . . . iot1 . . iot2"
+  ". g1 . . . . . . g2 . ."
+  ". . . . . w1 . . . w2 ."
+  "m1 . . . . m2 . . . . ."
+  "ct1 . . . . . . . . . ct2"
+  "c1 . . . . . . . . . c2";
 }
-
+.grid-name-title h1 {font-size: clamp(18px, 2vw, 40px);}
+.grid-name-title h2 {font-size: clamp(18px, 1.5vw, 30px); }
 .grid-name-title h1, .grid-name-title h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(18px, 3vw, 30px);
   letter-spacing: .1em;
   font-style: italic;
-}
-.grid-name-title h2 {
-  font-style: italic;
-  font-family: 'Roboto', sans-serif;
+  padding-right: 5vw;
 }
 
 .grid-welcome h2 {
   font-style: italic;
-  font-family: 'Roboto', sans-serif;
   font-size: clamp(18px, 2.5vw, 30px);
 }
 
@@ -122,7 +122,7 @@ footer img {
 .grid-name-title {
   grid-row: 1 / 3;
   grid-column: g1 / g2;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 0px 0px 20px black;
   border-radius: .5em;
   padding-top: 5vw;
   background-color: #3B5367;
@@ -139,10 +139,9 @@ footer img {
   grid-column: w1 / w2;
   padding-top: 2em;
   border-radius: 2em;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 0px 0px 20px black;
   padding: 4em;
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #3B5367;
   border: .25vh solid #c28422;
 }
@@ -152,10 +151,10 @@ footer img {
   grid-column: m1 / m2;
   background-image: url(../home-imgs/cloudmap.png);
   background-position: bottom;
-  background-size: 47vw;
+  background-size: 55vw;
   background-repeat: no-repeat;
   background-position: top;
-  opacity: 50%;
+  opacity: 20%;
 }
 
 .grid-iot {
@@ -166,7 +165,7 @@ footer img {
   background-size: 25vw;
   background-repeat: no-repeat;
   padding: 2em;
-  opacity: 13%;
+  opacity: 15%;
 }
 
 .grid-certs {
@@ -176,51 +175,49 @@ footer img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 0px 0px 20px black;
   border: 2px solid black;
   background-color:#3B5367;
   width: 100%;
-  max-height: 25vw;
-}
-
-.grid-credlycerts {
-  grid-row: 4 / 5;
-  grid-column: cc1 / cc2;
-  display: flex;
-  justify-content: center;
+  max-height: 25vh;
 }
 
 /* home/base breakpoint mid screen *****************************************************************************************************************************************************************/
 
-@media (max-width: 1550px) {
+@media (max-width: 1650px) {
   .intro-grid {
-    grid-template-rows: 250px 250px 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    ". . . . iot1 . . iot2"
-    ". g1 . . . g2 . ."
-    ". . . w1 . . w2 ."
-    "m1 . . m2 . . . ."
-    "ct1 . . . . . . ct2"
-    "c1 . . . . . . c2"
-    "cc1 . . . . . . cc2";
+    grid-template-rows: 220px 220px 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . . . . . . iot1 . . iot2"
+    ". g1 . . . . . . g2 . ."
+    ". . . . w1 . . . . w2 ."
+    "m1 . . . . m2 . . . . ."
+    "ct1 . . . . . . . . . ct2"
+    "c1 . . . . . . . . . c2";
+  }
+}
+
+@media (max-width: 1550px) {
+    .intro-grid {
+      grid-template-rows: 200px 200px 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (max-width: 1500px) {
   .intro-grid {
-  grid-template-rows: 225px 225px 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 175px 175px 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (max-width: 1400px) {
   .intro-grid {
-  grid-template-rows: 200px 200px 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 150px 150px 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (max-width: 1350px) {
   .intro-grid {
-    grid-template-rows: 190px 190px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 130px 130px 1fr 1fr 1fr 1fr 1fr 1fr;
   }
   
   .grid-iot {
@@ -251,8 +248,8 @@ footer img {
     grid-template-areas:
     "g1 . . . . . . g2"
     "w1 . . . . . . w2"
-    ". . . . iot1 . . iot2 "
-    "m1 . . . . . . m2"
+    ". . . iot1 . . . iot2 "
+    "m1 . . . . . m2 ."
     "c1 . . . . . . c2"
     "ct1 . . . . . . ct2"
     "cc1 . . . . . . cc2";
@@ -279,13 +276,14 @@ footer img {
   .grid-welcome p {text-align: left; padding-left: 5vw; padding-right: 5vw;}
   
   .grid-iot {
-    grid-row: 3 / 6;
-    background-size: 25em;
+    grid-row: 4 / 6;
+    background-size: 50vw;
     opacity: 10%;
+    scale: transform();
   }
   .grid-map {
-    grid-row: 2 / 5;
-    background-size: 40em;
+    grid-row: 2 / 4;
+    background-size: 80vw;
     opacity: 10%;
   }
   .grid-certs {
@@ -333,7 +331,6 @@ footer img {
   color: #1fa2f3;
   text-shadow: 2px 2px 1px black;
   font-size: clamp(18px, 3vw, 30px);
-  font-family: 'Roboto', sans-serif;
 }
 
 .resume_parent h4 {
@@ -341,7 +338,6 @@ footer img {
   text-shadow: 4px 4px 6px black;
   font-size: clamp(14px, 2.25vw, 20px);
   text-decoration-line: underline;
-  font-family: 'Roboto', sans-serif;
 }
 
 .res-title,
@@ -399,6 +395,8 @@ footer img {
   font-size: inherit;
   color: #68e0f8;
 }
+
+
 
 .skills {
   grid-row: 3 / 4;
@@ -591,6 +589,7 @@ footer img {
   border-radius: .5em;
   padding: 1em;
   background-image: url(../home-imgs/techy2.png);
+  background-repeat: no-repeat;
 }
 
 .project-home-text {
@@ -620,7 +619,7 @@ footer img {
   text-shadow: 2px 2px 4px black;
   font-style: italic;
   text-align: center;
-  font-size: clamp(12px, .85vw, 30px);
+  font-size: clamp(12px, 1.35vw, 30px);
 }
 
 .project-links a:link {
@@ -641,4 +640,22 @@ footer img {
     padding: 0;
     padding-block: .5em;
   }
+}
+
+
+
+/* ************************** Test Stuff ********************************************* */
+
+.changer-grid {
+  display: grid;
+  justify-content: center;
+  max-height: 30vh;
+}
+
+
+.one {
+  color: blue;
+}
+.two {
+  color: red;
 }

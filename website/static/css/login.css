@@ -1,0 +1,16 @@
+.login-wrapper{
+    min-height: 100vh;
+    padding-top: 4em;
+    padding-left: 35vw;
+    padding-right: 35vw;
+}
+
+.login-grid {
+    padding: 3em;
+    text-align: center;
+    border-radius: 2em;
+    box-shadow: 0px 0px 20px black;
+    color: white;
+    background-color: #3B5367;
+    border: .25vh solid #c28422;
+}

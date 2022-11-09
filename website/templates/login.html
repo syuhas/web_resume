@@ -1,13 +1,47 @@
 {% extends "base.html" %}
 
-{% block title %}VisitorLog{% endblock %}
+{% block title %}Login{% endblock %}
+
+{% block head %}
+
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+
+{% endblock %}
+
 {% block content %}
 
-<form action="#" method="post">
-    <p>Name: </p>
-    <p><input type="text" name="nm"></p>
-    <p><input type="submit" name="submit"></p>
+<div class="login-wrapper">
+    <section class="login-grid">
+        <form  method="post">
+            <h1 class="login-title"></h1>
+            <p>Please Enter Your Name:</p>
+            <p><input type="text" name="nm" placeholder="Name"></p>
+            <p>Please Enter Your Password:</p>
+            <p><input type="email" name="em" placeholder="Email"></p>
+            <p><input type="submit" value="Submit"></p> 
+        </form>
+    </section>
+</div>
 
-</form>
+<!-- <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="nm">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Please Enter Your Name</label>
+            <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="nm">
+            
+          </div>
+          <button class="w-100 btn btn-lg btn-warning" type="submit">Sign up</button>
+          <hr class="my-4">
+        </form>
+      </div>
+    </div>
+  </div> -->
 
 {% endblock %}
