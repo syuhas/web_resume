@@ -145,6 +145,7 @@ footer img {
   background-color: #3B5367;
   border: .25vh solid #c28422;
 }
+.introtext {text-align: left;}
 
 .grid-map {
   grid-row: 2 / 6;
