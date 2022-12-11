@@ -92,7 +92,7 @@
   
   
   .project-site-grid h4 {
-    font-size: clamp(10px, 2.5vw, 24px);
+    font-size: clamp(14px, 2.5vw, 24px);
     font-style: italic;
     text-decoration-line: underline;
     color: #c28422;

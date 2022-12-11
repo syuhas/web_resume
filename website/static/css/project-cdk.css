@@ -2,7 +2,6 @@
     background-image: none;
     background-color: #343a40;
     background-repeat: no-repeat;
-    background-size: 60vw;
 }
 
 .project-cdk-intro h1 {
@@ -107,7 +106,7 @@
     padding-left: 4vw;
 }
 .project-cdk-grid p {
-    font-size: clamp(7px, 1.5vw, 14px);
+    font-size: clamp(9px, 1.5vw, 14px);
     text-align: left;
     padding-left: 5vw;
     padding-right: 5vw;

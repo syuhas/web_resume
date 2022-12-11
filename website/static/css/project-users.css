@@ -1,0 +1,79 @@
+
+#base {
+    background-image: none;
+    background-color: #343a40;
+}
+
+#intro-decorator {
+    background-color: #3B5367;
+    border: .1vw solid #c28422;
+    border-radius: .5em;
+    background-image: url(../home-imgs/techy2.png);
+    background-repeat: no-repeat;
+}
+
+#decorator {
+    background-color: #3B5367;
+    border: .1vw solid #c28422;
+    border-radius: .5em;
+}
+
+#decorator p {
+    color: white;
+    font-size: clamp(11px, 1.5vw, 14px);
+}
+
+a:link, a:visited {color: #D1F5FF;}
+a:hover {color: #1fa2f3;}
+.greenlink:link, .greenlink:visited {color: rgb(42, 200, 50);}
+.greenlink:hover {color: #1fa2f3;}
+.btt:link, .btt:visited {color: rgb(255, 203, 47);}
+.btt:hover {color: #1fa2f3;}
+
+.btt {
+    font-size: clamp(14px, 1.75vw, 20px);
+    text-decoration: underline;
+}
+
+#decorator span {
+    text-shadow: 2px 2px 4px black; color: #c28422;
+}
+
+#heading {
+    font-size: clamp(14px, 3vw, 30px);
+    color: #c28422;
+    text-shadow: 5px 5px 10px black;
+    font-style: italic;
+}
+
+#subheading {
+    font-size: clamp(8px, 1vw, 24px);
+    color: white;
+    text-shadow: 5px 5px 10px black;
+    font-style: italic;
+}
+
+#intro img {
+    background-color: white; 
+    padding: 2em;
+}
+
+#intro p {
+    padding: 2em;
+}
+
+#section-heading {
+    font-size: clamp(14px, 2.5vw, 24px);
+    font-style: italic;
+    text-decoration-line: underline;
+    color: #c28422;
+    text-shadow: 2px 2px 10px black;
+    padding-bottom: 1vw;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid white;
+}

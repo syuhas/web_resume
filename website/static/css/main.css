@@ -65,7 +65,7 @@ footer {
 
 footer img {
   opacity: 50%;
-  height: 7vh;
+  height: 4vw;
 }
 .made-with {
   color: white;
@@ -102,18 +102,17 @@ footer img {
   "ct1 . . . . . . . . . ct2"
   "c1 . . . . . . . . . c2";
 }
-.grid-name-title h1 {font-size: clamp(18px, 2vw, 40px);}
-.grid-name-title h2 {font-size: clamp(18px, 1.5vw, 30px); }
+.grid-name-title h1 {font-size: clamp(18px, 2.25vw, 40px); letter-spacing: .2em;}
+.grid-name-title h2 {font-size: clamp(15px, 1.55vw, 30px); letter-spacing: .3em;}
 .grid-name-title h1, .grid-name-title h2 {
-  letter-spacing: .1em;
   font-style: italic;
-  padding-right: 5vw;
 }
 
 .grid-welcome h2 {
   font-style: italic;
   font-size: clamp(18px, 2.5vw, 30px);
 }
+
 
 .grid-name-title p, .grid-welcome p {
   font-size: clamp(14px, .8vw, 16px);
@@ -190,7 +189,7 @@ footer img {
     grid-template-rows: 220px 220px 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     ". . . . . . . iot1 . . iot2"
-    ". g1 . . . . . . g2 . ."
+    ". g1 . . . . . . g2 ."
     ". . . . w1 . . . . w2 ."
     "m1 . . . . m2 . . . . ."
     "ct1 . . . . . . . . . ct2"
@@ -263,7 +262,7 @@ footer img {
   .grid-name-title {
     grid-row: 1 / 2;
     padding: 1em;
-    padding-top: 1.5em;
+    padding-top: 3em;
   }
   .grid-welcome {
     grid-row: 2 / 6;

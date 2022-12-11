@@ -1,0 +1,758 @@
+
+{% extends "base.html" %} 
+
+{% block title %}Project - User Management{% endblock %} 
+{% block head %}
+
+{{ super() }}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/project-users.css') }}">
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="container mx-auto mt-4" style="max-width: 100%;">
+    
+    
+<!-- intro pic -->
+
+    <div class="row justify-content-center" id="intro">
+        <div class="col-md-8" id="intro-decorator">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <h1 class="text-center mt-4 justify-items-center" id="heading">User Management</h1>
+                    <h6 class="text-center" id="subheading">A Scalable Account Creation, Authorization and Management System for Web Application Users</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-9">
+                    <p><img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/usermgmt.png') }}" alt=""></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- overview -->
+    <div class="row justify-content-center mt-4 my-4" id="overview">
+        <div class="col-md-8" id="decorator" style="padding-bottom: 3vh;">
+
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Overview</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <p>The purpose of this project is to build upon the basics of designing a web application within the <span>Python Flask</span> Framework by creating my own user <span>Authorization</span> and <span>Management</span> 
+                    system for visitors to the site. Achieving this requires features like <span>session management, database connection and modeling, email smtp servers, password encryption, </span>and<span> cloud storage</span>. When the user visits the 
+                    site, they are presented with a welcome page and given the ability to sign up or log in with a previously created account. 
+                    <br><br>
+                    When signing up for a new account, input validation is performed, the user's
+                    password is encrypted using a <span>hashing algorithm</span> and their data is stored in an <span>AWS MySQL Database</span>. The user is then required to validate the email provided by clicking a time-sensitive, 
+                    personalized link that is generated with a URL compatible serializer <span>token</span>. Upon completion of the email validation process, 
+                    the user is now able to log in and set up their profile information including a profile picture that is uploaded and saved to <span>Amazon S3</span>. If at any point the user forgets their password, the option
+                    is given to send a password reset link to the user's email. They are also able to update their existing email by carrying out an additional email validation process, and can also choose to delete their account.
+                    <br><br>
+                    For the puropses of this project, the app is located in a different server environment. I will descibe all of the elements relevant to the user management system, while omitting the finer details of configuring an 
+                    Elastic Beanstalk environment, setting up a pipeline, enabling SSL/TLS and enabling DNS routing. These steps can be found in my previous project found <a class="greenlink" href="/project-site">here</a>.</p> 
+                </div>
+            </div>
+            <div id="cont"></div>
+        </div>
+    </div>
+<!-- links -->
+    <div class="row justify-content-center mt-4 my-4" id="links">
+        <div class="col-md-8" id="decorator">
+
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Page Contents</h4>
+                </div>
+            </div>
+            
+            <div class="mx-5 row justify-content-center">
+                <div class="col-6">
+                    <p><a href="#design">Design and Outline</a></p>
+                    <p><a href="#app">Application Configuration</a></p>
+                    <p><a href="#pipeline">Pipeline Deployment Structure</a></p>
+                    <p><a href="#env">Configuring Environment Variables</a></p>
+                    <p><a href="#db">Configuring Database Connection</a></p>
+                    <p><a href="#createuser">Creating Users</a></p>
+                    <p><a href="#hash">Password Hashing</a></p>
+                </div>
+                <div class="col-6 justify-content-center" style="padding-bottom: 2em;">
+                    <p><a href="#mail">SMTP Configuration</a></p>
+                    <p><a href="#validation">Email Verification</a></p>
+                    <p><a href="#login">Login and Authorization</a></p>
+                    <p><a href="#profiles">User Profiles</a></p>
+                    <p><a href="#summary">Summary</a></p>
+                    <p><a class="greenlink" href="https://github.com/syuhas/flaskdb">Github Repo</a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<!-- design -->
+    <div class="row justify-content-center mt-4 my-4" id="design">
+        <div class="col-md-8" id="decorator">
+
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Design and Outline of the Site</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 5vh;">
+                     <p>The user management consists of 3 main elements: a <span>signup</span> page, a <span>login</span> page, and a <span>user profile</span> page. In addition to this, the user can logout or 
+                        reset their password as well as delete their account within the user profile.</p>
+                </div>
+            </div>
+            <!-- picture section 1 -->
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/design1.png') }}" alt="">
+               </div>
+                <div class="col-md-10 m-auto" style="padding: 4em;">
+                     <p>All of the UX design for the user input pages have been designed with <span>bootstrap</span> for this project. The UX forms were made with the form-control bootstrap class.</p>
+                </div>
+            </div>
+            <!-- picture section 2 -->
+            <div class="row justify-content-center mt-3" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/design2.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/design3.png') }}" alt="">
+               </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+            
+        </div>
+    </div>
+<!-- app -->
+    <div class="row justify-content-center mt-4 my-4" id="app">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Application Factory Structure and the App Context</h4>
+                </div>
+            </div>
+            
+            <!-- picture section 1 -->
+            <div class="row justify-content-center">
+                <div class="col-md-6 m-auto" style="padding: 4em;">
+                     <p>An <span>Application Factory</span> structure is used for this project. This structure allows for more growth and complexity in the future. In order to make this work and avoid circular imports within out 
+                        blueprints, the blueprints themselves are defined within an <span>app context</span>. The application creation function will then be imported and called to start the application.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/app1.png') }}" alt="">
+               </div>
+            </div>
+            <!-- picture section 2 -->
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/app2.png') }}" alt="">
+               </div>
+               <div class="col-md-6 pt-5 m-auto">
+                    <p>Next, the application creation function is called which will initalize and run the application. During production operation, the debug feature will be disabled. For testing purposes it is useful to keep on to 
+                    diagnose problems with the application.</p>
+                </div>
+            </div>
+            <!-- last section -->
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/app3.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto" style="padding: 2em;">
+                    <p class="text-center">The application file structure.</p>
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+<!-- pipeline -->
+    <div class="row justify-content-center mt-4 my-4" id="pipeline">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">The Development Pipeline</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 2vh;">
+                    <p>Using <span>GitHub</span>, <span>CodePipeline</span> and <span>Elastic Beanstalk</span>, the workflow is automated in a pipeline from the IDE to the server environment.
+                    As the code is synced into the main branch of GitHub, CodePipeline will pull the code and automatically load the changes into the environment.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/pipe1.png') }}" alt="">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/pipe2.png') }}" alt="">
+               </div>
+            </div>
+            <div class="row justify-content-center mt-2" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/pipe3.png') }}" alt="">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/pipe4.png') }}" alt="">
+               </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+<!-- environment variables -->
+    <div class="row justify-content-center mt-4 my-4" id="env">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Environment Variables Configuration</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 2vh;">
+                    <p>Any sensitive information within the code such as private keys and database passwords needs to be masked through the use of <span>environment variables</span> since this code will be publicly visible on GitHub. Elastic Beanstalk allows for an easy way to 
+                        store environment variables through the use of <span>environment properties</span>. In the local code base, a separate file is created to hold the values of the environment variables using the <span>OS extension</span> and are imported when needed.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/env1.png') }}" alt="">
+                </div>
+                <div class="col-md-6 mt-2">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/env2.png') }}" alt="">
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+
+<!-- database -->
+    <div class="row justify-content-center mt-4 my-4" id="db">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Configuring the Database Connection and Defining the Schema</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 2vh;">
+                    <p><span>SQLAlchemy</span> is used to define the database schema and communicate with the database for this project. I decided to use the SQLAlchemy <span>ORM (Object Relational Mapper)</span> 
+                    to define the schema for the user class. The ORM is a library that facilitates communication between the database and Python. In simple terms, the ORM <span>maps Python classes to tables 
+                    within a relational database</span>, in this case MySQL hosted on AWS. This way, I can use Python to communicate with the database and make SQL queries instead of using the SQL syntax, which simplifies
+                    things and makes for much cleaner code. The ORM will translate function calls into SQL statements and create a connection pool session each time I need to read from or write to the database.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>Here the user schema is defined as a class with each column being defined along with it's data type. This is thanks to the use of the <span>declarative base</span> which 
+                    is a metadata container that will map the class to the table. The ORM <span>engine</span> is first created using the dialect, credentials and location of the remote database.
+                    After the table is defined, the <span>create all</span> function is called during the initial configuration of the database. This will actually create the database table and all of the configuration
+                    defined using the engine. After the inital creation of the database is configured, the engine connection can now be called as a session each time changes need to be made or data needs to be retrieved.</p>
+            </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/db1.png') }}" alt="">
+                </div>
+                
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/db2.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>Now that the database schema is defined and the database table is created, I can use the engine to connect to the database throughout the program. The function <span>connect()</span> will
+                    create a database session using <span>sessionmaker</span> which creates a new connection pool to the database. The function will then return that session which will be used to query the database.
+                    The session is a essentially an intermediary that holds the class object and must be bound to an engine. The session retains the object data until a transaction is commited to the database or the 
+                    transaction is rolled back. Using this format allows for me to adapt the program to pass in different database tables as parameters to the connect() function. For this project, however, I only have one table
+                    and the bound engine will always be the user class.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>Here is one example of the session being used to query the database. The connect() function is called and returns the session as the <span>local_session</span> variable.
+                    Arguments are passed to this function which creates a new unconfirmed user. The new user is defined using the <span style="color: greenyellow;">User</span> class. That new user is then added to the database
+                    session. Since the session is just a holding zone for the data, no changes will be made to the database until the session is actually commited. Once the session changes are commited to the database, the 
+                    connection is automatically closed by the ORM and the session data is flushed.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/db3.png') }}" alt="">
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+
+<!-- creating users -->
+    <div class="row justify-content-center mt-4 my-4" id="createuser">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Creating a New User</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 2vh;">
+                    <p>With all the pieces in place to connect to the database, <span>users are now able to be created and added to the user table</span>. In order to do this, I needed to program some logic to
+                    have the server recieve the <span>POST</span> request and then <span>handle and validate the user input</span>. Additionally, I need to have the program safely store the user's password and make sure that their email is valid. 
+                    In later steps, I will show how the users email can be validated using tokens and how I am able to securely store passwords in the database using password hashing algoriothms.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>In the HTML for the signup page, the variables inside the form tags under the <span>name attribute</span> will be passed to the server as a <span>POST</span> request. The back end of the application will then recieve these 
+                    variables to perform validation on them and pass them along to the next step to be processed and commited to the database.</p>
+            </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/createuser1.png') }}" alt="">
+                </div>
+                
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/createuser2.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>Here, the application first checks if the request type is a <span>POST</span> or a <span>GET</span> request and will route the traffic accordingly. If the message recieved is a POST request,
+                    the application will extract the name attributes for each input, save them as <span>Python variables</span>, and perform input validation to make sure the email and passwords match and that the username and email are 
+                    both unique. The username and email are checked by connecting to and querying the database, checking the email and username against each table row entry in the context of a <span>'for' loop</span>, and then passing the data along 
+                    to be confirmed by the user. Along the way, the password is also <span>hashed</span>, which I will go over in the next step.</p>
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+
+<!-- hashing -->
+    <div class="row justify-content-center mt-4 my-4" id="hash">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Password Hashing</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 2vh;">
+                    <p>During the user validation process, the user's password is <span>hashed</span> using an algorithm provided by the <span>Flask-bcrypt</span> extension. This will allow the user passwords to be stored safely
+                    in the database as the hashed value rather than plain text. In addition to hashing, flask-bcrypt adds a <span>salt</span> to the password which adds another layer of complexity to the hashing process and thus
+                    makes the password more secure.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>Here I have two functions that perform the hashing and validation process. The first function will hash the user's password then return it as a hashed value to store to the database. The second function will be able to check the hashed version 
+                        against the plain text version to see if they match. The number of <span>rounds</span> specified in the hashing function is known as the <span>cost factor</span>, which basically defines the level of complexity of the salting process. A higher
+                        number means that it takes more time to hash the value, therefore making brute force attacks harder to perform.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/hash1.png') }}" alt="">
+                </div>
+                
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10 m-auto">
+                    <p>I can now call either of these functions when I need to hash a password for a new user or check an existing password against the user input when they are logging in. Note that the user's password is at no point being stored in plain text 
+                        past the point that it is sent to the hashing function. I will not have access to it after this initial process which means I cannot retrieve the password either. This is due to the fact that hashing, as opposed to encryption, 
+                        is a <span>one way process</span>, meaning that when the user inputs their password, the program will never have access to the plain text version again. For this reason, a system needs to be in place to have the user reset their
+                        password since I can never retrieve it for them. This is done in a later step through the <span>password recovery email</span>.  
+                    </p>
+                </div>              
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/hash2.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/hash3.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/createuser3.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-2" style="padding-bottom: 2em;">
+                <div class="col-md-10 m-auto">
+                    <p>Now if I log into the database with a <span>SQL editor</span> tool, I can view the database entry that was created. The username is stored, a unique user ID is generated, and the password is stored as it's hashed value. One other 
+                    entry is generated under the <span>confirmed</span> column which is initialized to 0. This is a bool value that will be used in the next step to track whether or not the account has been
+                    verified by the user via email.</p>
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+
+<!-- mail server -->
+    <div class="row justify-content-center mt-4 my-4" id="mail">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Configuring the Mail SMTP Server</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 2vh;">
+                    <p>In order to have users confirm emails and change passwords, I needed an <span>SMTP</span> mail server. Gmail provides this service for use cases such as mine. I first needed to
+                        create a unique application password to connect this application to my account. I am now able to have this application send out emails on my behalf. Some minor configuration 
+                        must be done in the program in order to do this.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/mail1.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>Here I am using the <span>FlaskMail</span> extension which allows for an SMTP server to be defined and initialized to be used within the application. 
+                    Within the inital function that defines the application, I initialize the SMTP server with the correct settings to allow the application to send emails.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>Once initialized, I can use the server to send out emails on my behalf with a defined template and reciever address. This configuration will be used to set up the <span>initial email verification</span>, the <span>account password reset feature</span>, 
+                    and the ability to have the user <span>change their password with additional verification</span> in the future as desired.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" style="min-height: 20vh;" src="{{ url_for('static', filename='project-users-imgs/mail2.png') }}" alt="">
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+<!-- email verification -->
+    <div class="row justify-content-center mt-4 my-4" id="validation">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Account Email Verification</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 5vh;">
+                    <p>At this point the I have set up the application to create a user, hash their password, and store the user and their secure password in the database to have the user log in. Now I need a way to make sure the user actually owns the email they signed up with.
+                        This way, if the user forgets their password, I can have the application perform a password reset via email because we both confirmed we know the user has access to the email on file. In order to due this I used a combination of the SMTP server
+                        I previously configured, and a flask extension called <span>itsdangerous</span>. In this extension I need a tool called the <span>URLSafeTimedSerializer</span>. This will allows me to generate a URL compatible <span>token</span> to create a link that the
+                        user can click on to confirm the password.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/validate1.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>Once the user signs up, the application will flash this message, alerting them that an email has been sent to the address they entered. They must click the link within the email to confirm their account, which sets the <span>confirmed</span>
+                    database column to 1. This signifies that the value is <span>True</span>, meaning the email has been confirmed.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>If the user tried to login before verifying their email, the application will flash a message indicating that they must confirm before proceeding. From this screen they may also send another email with a fresh link. Every link they recieve is actually
+                        on a <span>time limit</span> which is set to whatever value I choose (in this case 30 minutes), and after that the link will expire.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" style="min-height: 20vh;" src="{{ url_for('static', filename='project-users-imgs/validate2.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/validate3.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10 m-auto">
+                    <p>Once the link is clicked, the user is taken back to the login screen where they can continue to the site to fill out their user profile. For the next portion of this section I'll cover the logic and details behind how 
+                    the program is able to achieve this.
+                    </p>
+                </div>
+            </div>
+
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+
+            <hr class="w-100"/>
+
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>In a previous section I covered <span>how the user input is actually validated and how they are entered into the system</span>. At the end of that route, a redirect is called to the <span>mailer.send_confirm_email</span> route in another file. This file
+                    handles all of the mail delivery for email verification and password resets, pictured in this section. </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" style="min-height: 20vh;" src="{{ url_for('static', filename='project-users-imgs/validate4.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/validate4.2.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/validate4.1.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/validate5.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>At the beginning of this route, the configuration for the email that will be sent is defined. I have a simple HTML template that will display the email pictured above. The email needs to be combined with a <span>token</span> that is
+                    generated with the help of the <span>URLSafeTimedSerializer</span> extension from itsdangerous. The <span>s.dumps</span> will combine the email (and added salt for security) into a unique token that is a URL safe string. This is then attached 
+                    to the link that will be sent to the user's email. The <span>_external=True</span> tag simply signifies that it is being sent as an absolute URL as opposed to a relative within our web page. On a basic level, what this link says is that
+                    when clicked, it will redirect the user to the route <span>mailer.confirm_email</span> which contains the code that will actually change the database entry to confirmed=1. Meaning they are now confirmed and ready to proceed to log in.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/validate6.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>Here in the <span>mailer.confirm_email route</span> we can see where the link is taking the user. In this route we can also see that the <span>token</span> is sent in as an argument and as part of the URL. By doing this, I have created a unique 
+                        route for each new token that is generated which then can be used to move ahead and confirm the user, since the token contains the user's email. Using <span>s.loads</span>, the token can be loaded back into it's original form before it
+                        was tokenized, used to query the database to find the user, and change the <span>confirmed</span> flag in the database to True. The user is then redirected to the login screen where they can successfully log in to the site. Notice also
+                        that the <span>max_age</span> for the token is defined here in the s.loads function, which defines the lifetime of the token.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>The <span>password reset via email</span> functionality uses the same concept as the email confirmation routes, with some changes to formatting and added logic for password validation. Instead of the user being sent to the login
+                        screen after having verified their email, they are sent to a page where they can enter and confirm a new email. Aside from that, the same basic idea applies and can be used for any type of validation over email.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" style="min-height: 20vh;" src="{{ url_for('static', filename='project-users-imgs/validate7.png') }}" alt="">
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center" > <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+
+    </div>
+<!-- login authorization -->
+    <div class="row justify-content-center mt-4 my-4" id="login">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">User Login and Authorization</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 5vh;">
+                    <p>To summarize, at this point the application has <span>taken in user input via a sign up table</span>, <span>validated the data</span>, <span>connected to a database</span> where the <span>new user is added</span>, sent the 
+                    user an <span>email verification link</span> to confirm their account, and <span>returned the user to the login screen</span> with a message letting them know that the confirmation was a success. Now the user is able to log 
+                    in since they have the confirmed flag set to 1 (True) in the database. 
+                    Most of the heavy lifting is out of the way and I now simply need to verify the user exists in the system when they go to log in and that their password matches the stored value in the database by sending the password to the
+                    <span>hash check</span> function.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/login1.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <p>As a separate exercise within the program, I decided to test out the <span>FlaskForm</span> extension from <span>flask-wtf</span> to recreate one of the forms in this project. This extension is a more elegant way of
+                    creating forms in flask. I simply needed to define my form as a class and import that class to be used for the login form. This essentially produces the same result as manually creating forms and handling POST requests, 
+                    but with the added benefits of <span>cleaner code</span> and <span>built-in input validation</span>. It is a great tool that can definitely simplify the form creation and coding process.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-8">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/login3.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>Now the application performs basic input validation via FlaskForm to make sure the user inputs some data. To actually check the data against the database, the program calls the <span>user</span> route.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" style="min-height: 20vh;" src="{{ url_for('static', filename='project-users-imgs/login2.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/login4.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>At the <span>user</span> route, the application connects to the database to first check if the user actually exists and that the user has <span>correctly entered their username</span>. Once the username is verified, the
+                    user's <span>password is sent to the hash check function</span>. This will return either <span>True</span> or <span>False</span> to check for a valid password. Once the password is verified, the program will check that 
+                    this is a <span>confirmed user via email verification</span>. If all of these checks pass, the user is logged in and can proceed to the final step of filling out a profile.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 m-auto">
+                    <p>If at any point the user decides to log out, they are sent to the <span>logout</span> route which will remove them from the session and return them to the login screen yet again.</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/login5.png') }}" alt="">
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+<!-- user profile -->
+    <div class="row justify-content-center mt-4 my-4" id="profiles">
+        <div class="col-md-8" id="decorator">
+            <!-- intro section -->
+            <div class="row">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Completing the User Profile</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10" style="padding-bottom: 5vh;">
+                    <p>For the final section, I wanted to have the user actually be able to do something now that they are logged in. I created a simple <span>user profile</span> where the user can fill out some 
+                    <span>basic contact information</span> and use a <span>delete feature</span> if they wish to delete their account. As an added extra, the user can add a <span>profile picture</span> to their profile, made possible with the use of 
+                    <span>AWS S3</span> for hosting the photos on the back end. All I needed to do was configure the proper permissions for the application to access my S3 bucket, which is served via <span>HTTPS</span> along with the
+                    rest of the site, as well as configuring some minor <span>nginx</span> file upload limits on the EC2 server for server to accept larger profile photos.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof1.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof2.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <p>When greeted at the profile screen, the user has the option of filling in any of their profile details or profile image and updating with one click. The changes will be reflected upon being redirected 
+                    back to the page, and messages will flash on the screen confirming that their requested details were successfully updated.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof3.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof4.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof4.5.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10">
+                    <p>The user also has the option of updating their <span>password</span> or updating their <span>email</span>. Updating the email will automatically set the user to unconfirmed and send the user another token link.
+                    They will follow the same validation process to validate the new email as when they initially created their account. If the user chooses to <span>delete</span> their account, a warning <span>modal</span> will pop up on the 
+                    screen where some simple <span>Javascript</span> will require them to enter their username before the <span>final option to delete</span> is available.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof4.6.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof4.7.png') }}" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof5.png') }}" alt="">
+                </div>
+                <div class="col-md-6 m-auto">
+                    <p>The user details are placed into a 'context' for the user and sent to the user profile template as a <span>keyword argument</span> where they can be unloaded in the template and displayed in their applicable forms
+                    as placeholders. This is done simply to clean up the code a bit, and allow for only one argument to be sent to the template.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10 m-auto">
+                    <p>The rest of the code consists of more logic to parse through the <span>POST requests</span> based on the attributes the user has requested to be updated.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof6.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof7.png') }}" alt="">
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-10 m-auto">
+                    <p>Now the only step left is to connect and upload the profile picture to <span>AWS S3</span>. This is done through the us of <span>Boto3</span>, the AWS SDK for python. I made a few configurations to load the file
+                    onto my S3 bucket as the <span>name of the user followed by "_profile_img"</span> so they are easier to track in the bucket and will be overriden in case the user changes their picture again. In addition, the bucket is
+                    also <span>versioned</span> so older versions of their profile pictures are kept for a given amount of time before they are permanently deleted. <br><br> I also need a way to 
+                    <span>tie each user's picture to their profile</span> beyond simply the naming scheme of their photo. In order to acheieve this, I simply have the program save the <span>URL location</span> of the file in the bucket as an 
+                    <span>entry in the database</span> corresponding to each user. That way, I can display the user's profile image by simply querying the database and loading the URL saved to their profile into the user profile template
+                    for each user.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
+                <div class="col-md-6 my-3">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof8.png') }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/prof9.png') }}" alt="">
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+<!-- summary -->
+    <div class="row justify-content-center mt-4 my-4" id="overview">
+        <div class="col-md-8" id="decorator" style="padding-bottom: 3vh;">
+
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <h4 class="mt-4" id="section-heading">Summary</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <p>My biggest takeaway from this project was that looks are often deceiving. A simple looking web concept on the surface can have layers of complexity under the hood. There are many more moving parts going on here
+                    than I would have thought given a cursory glance. The great thing for me about coding and developing projects like this are the moments where a complex series of operations going on behind the scenes produces a simple and
+                    clean finished product. Projects like these require lots of new learning experiences and chances to try out new technologies while producing something people can interact with, making this a very enjoyable project to have
+                    undertaken.
+                    <br><br>
+                    I picked up many useful skills progressing through this project. From database management to cloud services integration all the way to handling more complex POST requests. I enjoyed learning more about how session data works
+                    and how it is handled in different contexts ranging from server side temporary data to connection pooling with a relational database. Learning through mistakes made along the way was a great way to gaining
+                    insight about how these systems can be optimized and improved as I create more complex projects in the future.
+                    <br><br>
+                    All around this was an invaluable project to me in my progression towards learning more about cloud and web infrastructure and I will use many of these tools in future projects moving forward. Thanks for taking the time
+                    to review this project and please reach out with any comments or suggestions.
+                    <br><br>
+                    <p style="font-style: italic; opacity: 50%;">Steve</p>
+                    </p> 
+                </div>
+            </div>
+            <div class="my-4"><h6 class="text-center"> <a class="btt" href="#cont">Back to Top</a></h6></div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
