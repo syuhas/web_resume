@@ -12,6 +12,18 @@
     background-repeat: no-repeat;
 }
 
+#intro-decorator h2 {
+    color: white;
+    text-shadow: 5px 5px 10px black;
+}
+
+.demo:link, .demo:visited {color: #1fa2f3;}
+.demo:hover {color: #D1F5FF;}
+
+#links p{
+    text-shadow: 2px 2px 5px black;
+}
+
 #decorator {
     background-color: #3B5367;
     border: .1vw solid #c28422;
