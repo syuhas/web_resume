@@ -8,7 +8,7 @@
     background-size: 60vw;
   }
   .project-site-intro h1 {
-    font-size: clamp(14px, 3vw, 30px);
+    font-size: clamp(18px, 4vw, 30px);
     padding-bottom: 1em;
     color: #c28422;
     text-shadow: 2px 2px 10px black;
@@ -92,7 +92,7 @@
   
   
   .project-site-grid h4 {
-    font-size: clamp(14px, 2.5vw, 24px);
+    font-size: clamp(14px, 3.5vw, 24px);
     font-style: italic;
     text-decoration-line: underline;
     color: #c28422;
@@ -103,7 +103,7 @@
     padding-left: 4vw;
   }
   .project-site-grid p {
-    font-size: clamp(9px, 1.5vw, 14px);
+    font-size: clamp(11px, 1.5vw, 14px);
     text-align: left;
     padding-left: 5vw;
     padding-right: 5vw;

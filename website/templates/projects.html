@@ -11,7 +11,8 @@
 
 <main class="project-home-intro">
     <div class="project-home-intro-wrapper">
-        <h1>Projects</h1>
+        <h1><hr>Projects<hr></h1>
+        
         <div class="project-home-img-wrapper">
             <section class="project-home-img1">
                 <img src="{{ url_for('static', filename='home-imgs/idea.png') }}" alt="">
@@ -25,12 +26,15 @@
         </div>
         
         <div class="project-links">
-            <a href="/project-users">Web App User Management and Authorization</a>
-            <p>A fully functional user sign up and management system with user authorization, database management, email validation and user profile setup.</p>
+            <a href="/project-users">User Management Web Application</a>
+            <hr>
+            <p>A fully functional user management system with registration, login authorization, database management and email validation.</p>
             <a href="/project-site">How I Made This Site</a>
+            <hr>
             <p>An explanation of how this site was made with all of the resources used. This project highlights how a range of AWS services can be used to build a web site or web app.
             This project was designed and deployed by me from the ground up using a Python Flask application and this overview will describe all of the AWS resources used in it's creation.</p>
             <a href="/project-cdk">AWS CDK Install and Simple Stack Creation</a>
+            <hr>
             <p>Using the AWS Cloud Development Kit, AWS resources can be defined programmatically by using Infrastructure as Code.
             This projects demonstrates how to utilize the CDK to provision AWS resources using an IDE and language of our choosing which generates CloudFormation templates to define our resource stack.</p>
         </div>

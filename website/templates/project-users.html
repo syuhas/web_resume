@@ -22,7 +22,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-md-10">
-                    <h1 class="text-center mt-4 justify-items-center" id="heading">User Management</h1>
+                    <h1 class="text-center mt-4 justify-items-center" id="heading"><hr>User Management System<hr></h1>
                     <h6 class="text-center" id="subheading">A Scalable Account Creation, Authorization and Management System for Web Application Users</h6>
                 </div>
             </div>
@@ -33,14 +33,14 @@
             </div>
         </div>
     </div>
+<!-- link to demo -->
     <div class="row justify-content-center mt-4" id="intro">
         <div class="col-md-8" id="intro-decorator">
-
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <h2 class="text-center">Try it here: &nbsp;&nbsp;<a class="demo" href="https://users.digitalsteve.net" target="_blank" rel="noopener noreferrer">User Management Demo</a></h2>
+            <div class="row justify-content-center mt-3 my-3">
+                <div class="col-md-10 text-center">
+                    <a href="https://users.digitalsteve.net" class="btn btn-success" target="_blank" rel="noopener noreferrer"><h5 class="mt-2" style="padding-left: 4vw; padding-right: 4vw;">Click Here to Try the Demo</h5></a>
                 </div>
-            </div>
+            </div>            
         </div>
     </div>
 <!-- overview -->
@@ -132,7 +132,7 @@
                 <div class="col-md-6 m-auto">
                     <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/design2.png') }}" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-3">
                     <img class="rounded mx-auto d-block img-fluid" src="{{ url_for('static', filename='project-users-imgs/design3.png') }}" alt="">
                </div>
             </div>
@@ -430,7 +430,7 @@
             <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
                 <div class="col-md-6 m-auto">
                     <p>Once initialized, I can use the server to send out emails on my behalf with a defined template and reciever address. This configuration will be used to set up the <span>initial email verification</span>, the <span>account password reset feature</span>, 
-                    and the ability to have the user <span>change their password with additional verification</span> in the future as desired.</p>
+                    and the ability to have the user <span>set a new email with additional verification</span> in the future as desired.</p>
                 </div>
                 <div class="col-md-6">
                     <img class="rounded mx-auto d-block img-fluid" style="min-height: 20vh;" src="{{ url_for('static', filename='project-users-imgs/mail2.png') }}" alt="">
@@ -450,10 +450,10 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-10" style="padding-bottom: 5vh;">
-                    <p>At this point the I have set up the application to create a user, hash their password, and store the user and their secure password in the database to have the user log in. Now I need a way to make sure the user actually owns the email they signed up with.
-                        This way, if the user forgets their password, I can have the application perform a password reset via email because we both confirmed we know the user has access to the email on file. In order to due this I used a combination of the SMTP server
-                        I previously configured, and a flask extension called <span>itsdangerous</span>. In this extension I need a tool called the <span>URLSafeTimedSerializer</span>. This will allows me to generate a URL compatible <span>token</span> to create a link that the
-                        user can click on to confirm the password.
+                    <p>At this point the I have set up the application to create a user, hash the user's password, and store the user and hashed password in the database to have the user log in. Now I need a way to make sure the user 
+                        actually owns the email they signed up with. This way, if the user forgets their password, I can have the application perform a password reset via email because we both confirmed we know the user has access to the
+                        email on file. In order to due this I used a combination of the SMTP server I previously configured, and a flask extension called <span>itsdangerous</span>. In this extension I need a tool called the 
+                        <span>URLSafeTimedSerializer</span>. This will allows me to generate a URL compatible <span>token</span> to create a link that the user can click on to confirm the password.
                     </p>
                 </div>
             </div>
@@ -518,9 +518,10 @@
                 </div>
                 <div class="col-md-6 m-auto">
                     <p>At the beginning of this route, the configuration for the email that will be sent is defined. I have a simple HTML template that will display the email pictured above. The email needs to be combined with a <span>token</span> that is
-                    generated with the help of the <span>URLSafeTimedSerializer</span> extension from itsdangerous. The <span>s.dumps</span> will combine the email (and added salt for security) into a unique token that is a URL safe string. This is then attached 
-                    to the link that will be sent to the user's email. The <span>_external=True</span> tag simply signifies that it is being sent as an absolute URL as opposed to a relative within our web page. On a basic level, what this link says is that
-                    when clicked, it will redirect the user to the route <span>mailer.confirm_email</span> which contains the code that will actually change the database entry to confirmed=1. Meaning they are now confirmed and ready to proceed to log in.</p>
+                    generated with the help of the <span>URLSafeTimedSerializer</span> extension from itsdangerous. The <span>s.dumps</span> will combine the email (and added salt for security) into a unique token that is a URL safe string. This is then 
+                    attached to the link that will be sent to the user's email. The <span>_external=True</span> tag simply signifies that it is being sent as an absolute URL as opposed to a relative link within our web page. 
+                    Basically, when the link is clicked it will redirect the user to the route <span>mailer.confirm_email</span> which contains the code that will actually change the database entry to confirmed=1,  
+                    meaning they are now confirmed and ready to proceed with the login process.</p>
                 </div>
             </div>
             <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
@@ -623,9 +624,9 @@
             <div class="row justify-content-center">
                 <div class="col-md-10" style="padding-bottom: 5vh;">
                     <p>For the final section, I wanted to have the user actually be able to do something now that they are logged in. I created a simple <span>user profile</span> where the user can fill out some 
-                    <span>basic contact information</span> and use a <span>delete feature</span> if they wish to delete their account. As an added extra, the user can add a <span>profile picture</span> to their profile, made possible with the use of 
-                    <span>AWS S3</span> for hosting the photos on the back end. All I needed to do was configure the proper permissions for the application to access my S3 bucket, which is served via <span>HTTPS</span> along with the
-                    rest of the site, as well as configuring some minor <span>nginx</span> file upload limits on the EC2 server for server to accept larger profile photos.</p>
+                    <span>basic contact information</span> and use a <span>delete feature</span> if they wish to delete their account. As an added extra, the user can add a <span>profile picture</span> to their profile, made possible with the 
+                    use of <span>AWS S3</span> for hosting the pictures on the back end. All I needed to do was configure the proper permissions for the application to access my S3 bucket, which is served via <span>HTTPS</span> along with the
+                    rest of the site, as well as configuring some minor <span>nginx</span> file upload limits on the EC2 server for server to accept larger files for profile picture uploads.</p>
                 </div>
             </div>
             <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
@@ -698,10 +699,11 @@
                 <div class="col-md-10 m-auto">
                     <p>Now the only step left is to connect and upload the profile picture to <span>AWS S3</span>. This is done through the us of <span>Boto3</span>, the AWS SDK for python. I made a few configurations to load the file
                     onto my S3 bucket as the <span>name of the user followed by "_profile_img"</span> so they are easier to track in the bucket and will be overriden in case the user changes their picture again. In addition, the bucket is
-                    also <span>versioned</span> so older versions of their profile pictures are kept for a given amount of time before they are permanently deleted. <br><br> I also need a way to 
-                    <span>tie each user's picture to their profile</span> beyond simply the naming scheme of their photo. In order to acheieve this, I simply have the program save the <span>URL location</span> of the file in the bucket as an 
-                    <span>entry in the database</span> corresponding to each user. That way, I can display the user's profile image by simply querying the database and loading the URL saved to their profile into the user profile template
-                    for each user.</p>
+                    also <span>versioned</span> so older versions of their profile pictures are kept for a given amount of time before they are permanently deleted.
+                    <br><br> 
+                    I also need a way to <span>connect each user's picture to their profile</span> beyond the naming scheme of the files. In order to acheieve this, I have the program save the 
+                    <span>URL location</span> of the bucket object as an <span>entry in the database</span> for each user. That way, I can display the user's profile image by simply querying the database and loading 
+                    the stored S3 URL, along with the rest of the user context, into the user profile template.</p>
                 </div>
             </div>
             <div class="row justify-content-center mt-5" style="padding-bottom: 2em;">
