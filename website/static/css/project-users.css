@@ -99,3 +99,18 @@ a:hover {color: #1fa2f3;}
 .btt:hover {color: #D1F5FF;}
 .demo:link, .demo:visited {color: white;}
 .demo:hover {color: #1fa2f3;}
+
+
+@media (min-width: 0px) {
+    
+  }
+@media (min-width: 576px) {
+    #intr-img {
+        padding: 0;
+    }
+  }
+@media (min-width: 768px) {
+    #intr-img {
+        padding: 2em;
+    }
+  }
