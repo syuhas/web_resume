@@ -10,7 +10,7 @@
 }
 
 .project-cdk-intro h1 {
-    font-size: clamp(18px, 4vw, 30px);
+    font-size: clamp(24px, 4vw, 36px);
     padding-bottom: 1em;
     color: #c28422;
     text-shadow: 2px 2px 10px black;
@@ -77,10 +77,7 @@
     padding-left: 10vw;
     padding-right: 10vw;
 }
-.project-cdk-contents-child {
-    flex: 1 1;
-    font-size: clamp(10px, 2vw, 14px);
-}
+
 
 .btt {
     padding: 2vw;
@@ -100,7 +97,7 @@
 
 
 .project-cdk-grid h4 {
-    font-size: clamp(14px, 3.5vw, 24px);
+    font-size: clamp(20px, 3.5vw, 24px);
     font-style: italic;
     text-decoration-line: underline;
     color: #c28422;

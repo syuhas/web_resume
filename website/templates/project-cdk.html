@@ -30,7 +30,7 @@
     <section class="project-cdk-grid-child">
         <h4>Overview</h4>
         <p style="margin-left: 5vw; margin-right: 5vw;">This project involves the installation and operation of the <span>AWS CDK</span>.
-        The AWS CDK is an <span>IDE-based framework</span> that allows us to define infrastructure as code (<span>IaC</span>) and uses CloudFormation to provision the resources. This is an alternative to using the CloudFormation <span>templates</span>
+        The AWS CDK is an <span>IDE-based framework</span> that allows us to define infrastructure as code (<span>IaC</span>) and uses <span>CloudFormation</span> to provision the resources. This is an alternative to using the CloudFormation <span>templates</span>
         themselves, as the CDK actually auto-generates the templates based on the code you define in your IDE. This is a great solution for those who prefer to use a programming language of their choice to define and provision AWS
         infrastructure. For the following exercise, we will define a simple VPC with 3 public facing subnets, in 3 separate availability zones.
         </p>
@@ -58,13 +58,13 @@
     <section class="project-cdk-grid-child">
         <h4 class="" id="inst">Installing Typescript and the CDK</h4>
         <div class="project-cdk-child-inst">
-            <p class="inst-intro">First, there are some prerequisties that need to be in place before actually installing the CDK. As a preliminary measure, the <span>AWS CLI</span> must be installed and configured with you account credentials on the 
-            system being used. <span>Node.js</span> is also required to use the CDK, so that must be installed beforehand. Here we will be installing <span>Typescript</span> and the CDK itself. In addition to this, things like Javascript and any other preferred 
-            languages that we want to use (Python, C#, etc.) must be installed. However, for our purposes here, the minimum requirements are Node.js and Typescript.</p>
+            <p class="inst-intro">First, there are some prerequisties that need to be in place before actually installing the CDK. As a preliminary measure, the <span>AWS CLI</span> must be installed and configured with the account credentials for the 
+            IAM role being used. <span>Node.js</span> is also required to use the CDK, so that must be installed beforehand. Here I will be installing <span>Typescript</span> and the CDK itself. In addition to this, things like Javascript and any other preferred 
+            languages that we want to use (Python, C#, etc.) must be installed. However, for my purposes here, the minimum requirements are Node.js and Typescript.</p>
             <div class="inst-ts"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-1-typescript.png') }}" alt=""></div>
-            <p class="inst-ts-text">Using the <span>Node Package Manager(npm)</span> in global mode, we can install Typescript which will be used for this project.</p>
+            <p class="inst-ts-text">Using the <span>Node Package Manager(npm)</span> in global mode allows me to install Typescript which will be used for this project.</p>
             <div class="inst-cdk"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-2-checkinstall.png') }}" alt=""></div>
-            <p class="inst-cdk-text">Now the <span>Cloud Developement Kit</span> can be installed. To verify our installation, we can run a 'cdk --version' check. Additionally, a pip dependencies overview let's us see exactly what the CDK has installed
+            <p class="inst-cdk-text">Now the <span>Cloud Developement Kit</span> can be installed. To verify the installation, I can run a 'cdk --version' check. Additionally, a pip dependencies overview let's us see exactly what the CDK has installed
             on top of our previously existing dependencies.</p>
         </div>
         <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
@@ -73,25 +73,25 @@
     <section class="project-cdk-grid-child">
         <h4 class="" id="boot">Bootstrapping and Initialization</h4>
         <div class="project-cdk-child-bs">
-            <p class="bsi">Once the CDK is installed, one last step is required before we can initialize our project and start coding in some infrastructure. Our account and region needs to be <span>Bootstrapped</span> to the CDK, which is essentially the process
-            where containers are created behind the scenes that will contain the necessary assets and files that <span>Cloudformation</span> will use when we get to our deployment stage. Any additional accounts 
-            or regions we wish to use must be bootstrapped as well. <br><br>Once the bootstrapping stage is complete, we will be able to <span>initialize</span> a new project and start defining our infrastructure.</p>
+            <p class="bsi">Once the CDK is installed, one last step is required before I can initialize the project and start coding in some infrastructure. The account and region needs to be <span>Bootstrapped</span> to the CDK, which is essentially the process
+            where containers are created behind the scenes that will contain the necessary assets and files that <span>Cloudformation</span> will use when at the deployment stage. Any additional accounts 
+            or regions I wish to use must be bootstrapped as well. <br><br>Once the bootstrapping stage is complete, I will be able to <span>initialize</span> a new project and start defining infrastructure.</p>
             <div class="bs1"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-3-bootstrap.png') }}" alt=""></div>
-            <p class="bs1t">The <span>bootstrap</span> process using our account number and region. This may be done mulitple times for additional accounts and regions. Here we can see <span>CloudFormation</span> creating our stack
-            preliminary resources, policies and repository that will be used with our project.</p>
+            <p class="bs1t">The <span>bootstrap</span> process is seen here using my role's account number and region. This may be done mulitple times for additional accounts and regions. Here, <span>CloudFormation</span> is creating the stack
+            preliminary resources, policies and repository that will be used with my project.</p>
             <div class="bs2"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-4-init.png') }}" alt=""></div>
-            <p class="bs2t">Once completed, we are now ready to begin initializing the project. For our purposes, a simple typescript blank project is created. We are going to add resources directly from our IDE which will then trigger
-            Cloudformation to add those resources to our stack.</p>
+            <p class="bs2t">Once completed, I am now ready to begin initializing the project. For my purposes, a simple typescript blank project is created. I am going to add resources directly from the IDE which will then trigger
+            Cloudformation to add those resources to the stack.</p>
             <div class="bs3"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-5-file-structure.png') }}" alt=""></div>
-            <p class="bs3t">We can see the <span>file structure</span> here that the initialization process created. The key elemements here are:
-            <br><br><span>cdk-demo.ts</span>: This is where we are going to create and load all of the stacks that we define.
-            <br><br><span>cdk-demo-stack.ts</span>: This is where we actually define the stack, including reasources and properties.
+            <p class="bs3t">This is the <span>file structure</span> that the initialization process created. The key elemements here are:
+            <br><br><span>cdk-demo.ts</span>: This is where I am going to create and load all of the stacks that I define.
+            <br><br><span>cdk-demo-stack.ts</span>: This is where I actually define the stack, including reasources and properties.
             <br><br><span>package.json</span>: Dependencies and build scripts are defined here (npm watch, npm build, npm test).
             <br><br><span>cdk.json</span>: Finally, this instructs the toolkit how to run your application.</p>
             <div class="bs4"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-6-init-cf.png') }}" alt=""></div>
-            <p class="bs4t">We can now see confirmation that our <span>cloudformation stack</span> has been created by signing into the console. From here we can see everything that has been created from the CDK.</p>
+            <p class="bs4t">We can now see confirmation that our <span>cloudformation stack</span> has been created by signing into the console. From here I can see everything that has been created from the CDK.</p>
             <div class="bs5"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-7-designer.png') }}" alt=""></div>
-            <p class="bs5t">In addition, we can go into the <span>template designer</span> to get a visual representation of what preliminary resources and roles were created in the stack.</p>
+            <p class="bs5t">In addition, I can go into the <span>template designer</span> to get a visual representation of what preliminary resources and roles were created in the stack.</p>
         </div>
         <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
     </section>
@@ -99,19 +99,19 @@
     <section class="project-cdk-grid-child">
         <h4 class="" id="define">Defining AWS Infrastructure as Code</h4>
         <div class="project-cdk-child-df">
-            <p class="dfi">At this point we have all of our local <span>dependencies</span> installed and the <span>project stack</span> has been initialized. Now we can begin to define our infrastructure as code using <span>TypeScript</span> which will later be
-            compiled into <span>JavaScript</span> and verified. We will then deploy the infrastructure that we have defined in the final step. In this project, we are going to create a simple <span>VPC with 3 public subnets.</span></p>
+            <p class="dfi">At this point I have all of the local <span>dependencies</span> installed and the <span>project stack</span> has been initialized. Now I can begin to define the infrastructure as code using <span>TypeScript</span> which will later be
+            compiled into <span>JavaScript</span> and verified. I then deploy the infrastructure that is defined in the final step. In this project, the created stack consists of a <span>VPC with 3 public subnets.</span></p>
             <div class="df1"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-8-acct-reg.png') }}" alt=""></div>
-            <p class="df1t">This preliminary measure, while optional, will define the environment for our stack using the account and region that the stack will be deployed to. If we skip this step, the stack will be considered <span>environment-agnostic</span>
+            <p class="df1t">This preliminary measure, while optional, will define the environment for our stack using the account and region that the stack will be deployed to. If I skip this step, the stack will be considered <span>environment-agnostic</span>
             which will allow it to be deployed to any environment, but certain features and context lookups will be unavailable(eg. ec2.Vpc.fromLookup).</p>
             <div class="df2"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-9-skeleton.png') }}" alt=""></div>
-            <p class="df2t">In order to actually start defining our infrastructure, we must first install the EC2 <span>construct library module</span>. &nbsp A construct is essentially a dependency for the CDK that represents a single or
-            multiple AWS resources. The EC2 construct module contains support for AWS VPCs. Using Node Package Manager(npm install @aws-cdk/aws-ec2), we can install the module that will allow us to define our VPC and subnets in the stack. 
-            We then import the module into our project<br><br> Now we essentially have a working <span>skeleton</span> for our stack definition. Were we to build and deploy our CDK now, no resources would be added. In the final step we will actually
+            <p class="df2t">In order to actually start defining the infrastructure, I must first install the EC2 <span>construct library module</span>. &nbsp A construct is essentially a dependency for the CDK that represents a single or
+            multiple AWS resources. The EC2 construct module contains support for AWS VPCs. Using Node Package Manager(npm install @aws-cdk/aws-ec2), I can install the module that will allow me to define the VPC and subnets in the stack. 
+            I then import the module into the project<br><br> Now I essentially have a working <span>skeleton</span> for the stack definition. Were I to build and deploy the CDK now, no resources would be added. In the final step I will actually
             define the resources.</p>
             <div class="df3"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-10-vpc-config.png') }}" alt=""></div>
-            <p class="df3t">As seen here, we define a <span>VPC with a maximum of 3 Availability Zones</span>. Our 3 Availability Zones will each have a <span>public subnet</span>. In order for the subnets to be properly defined, they must be configured.
-            The subnet mask is set to /24 which will give us 254 usable IP addresses for each subnet. Now that our VPC and subnets are defined, we can build and deploy the stack in the next step.</p>
+            <p class="df3t">As seen here, I define a <span>VPC with a maximum of 3 Availability Zones</span>. The 3 Availability Zones will each have a <span>public subnet</span>. In order for the subnets to be properly defined, they must be configured.
+            The subnet mask is set to /24 which will give us 254 usable IP addresses for each subnet. Now that the VPC and subnets are defined, I can build and deploy the stack in the next step.</p>
         </div>
         <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
     </section>
@@ -119,22 +119,22 @@
     <section class="project-cdk-grid-child">
         <h4 class="" id="deploy">Building and Deploying the Stack</h4>
         <div class="project-cdk-child-dp">
-            <p class="dpi">Finally we have laid the groundwork to <span>deploy our stack</span>. As we will see, there is a lot going on behind the scenes and through simple defined infrastructure you can really start to see the power
-            of the Cloud Development Kit. In this process we are also compiling the Typescript into JavaScript and then deploying the code as JavaScript. This will also verify that the infrastructure has been properly defined and that we haven't made
+            <p class="dpi">The configuration is now completed to <span>deploy the stack</span>. There is a lot going on behind the scenes and through simple defined infrastructure and one can really start to see the power
+            of the Cloud Development Kit through . In this process I am also compiling the Typescript into JavaScript and then deploying the code as JavaScript. This will also verify that the infrastructure has been properly defined and that I haven't made
             any mistakes along the way.</p>
             <div class="dp1"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-11-build-deploy.png') }}" alt=""></div>
-            <p class="dp1t">Using <span>NPM</span>, the code is compiled into JavaScript and checked for validity. After we confirm that no errors are present, we can use the <span>CDK</span> to deploy the stack. We can see here that the stack code is valid and 
-            the change to the stack is initializing and preparing to deploy. </p>
+            <p class="dp1t">Using <span>NPM</span>, the code is compiled into JavaScript and checked for validity. After checking that no errors are present, I can use the <span>CDK</span> to deploy the stack. The change to the stack is seen here
+            initializing and preparing to deploy.</p>
             <div class="dp2"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-12-build-deploy-result.png') }}" alt=""></div>
-            <p class="dp2t">During deployment, we can see exactly what is deploying into the stack as the resources are created.</p>
+            <p class="dp2t">Stack resources are being created during deployment.</p>
             <div class="dp3"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-13-deploy-in-progress.png') }}" alt=""></div>
-            <p class="dp3t">In addition to viewing the change set progress in the IDE, we can <span>log into the CloudFormation via the console</span> and view the stack as the changes are in progress. We can confirm here that stack is 
+            <p class="dp3t">In addition to viewing the change set progress in the IDE, I can <span>log into the CloudFormation via the console</span> and view the stack as the changes are in progress. I can confirm here that stack is 
             successfully deployed.</p>
             <div class="dp4"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-14-result-vpc.png') }}" alt=""></div>
-            <p class="dp4t">As another visual aid, I logged into the console to check that all of the resources that I defined were properly deployed. Here we see that the <span>VPC</span> is available in our account...</p>
+            <p class="dp4t">As another visual aid, I logged into the console to check that all of the resources that I defined were properly deployed. Here I can also check that the <span>VPC</span> is available...</p>
             <div class="dp5"><img src="{{ url_for('static', filename='project-cdk-imgs/cdk-15-result-subnets.png') }}" alt=""></div>
-            <p class="dp5t">...and the <span>public subnets</span> are properly deployed, one in each of our 3 Availability zones. Each has a subnet mask of /24 and the necessary route tables and internet gateways defined. 
-            The stack has now been successfully deployed and we can deploy more change sets to the stack via our code to add or remove resources as needed.</p>
+            <p class="dp5t">...and the <span>public subnets</span> are properly deployed, one in each of the 3 Availability zones. Each has a subnet mask of /24 and the necessary route tables and internet gateways defined. 
+            The stack has now been successfully deployed and I can deploy more change sets to the stack via code to add or remove resources as needed.</p>
         </div>
         <h6 class="btt"> <a href="#cont">Back to Top</a></h6>
     </section>

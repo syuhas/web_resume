@@ -571,7 +571,7 @@ footer img {
   padding-bottom: 10em;
 }
 .project-home-intro h1 {
-  font-size: clamp(20px, 3vw, 30px);
+  font-size: clamp(24px, 4vw, 36px);
   padding-bottom: 1em;
   color: #c28422;
   text-shadow: 5px 5px 10px black;
@@ -619,13 +619,6 @@ footer img {
   background-repeat: no-repeat;
 }
 
-.project-home-text {
-  color: white;
-  padding: 2em;
-  font-size: clamp(12px, 1vw, 30px);
-}
-
-
 
 .project-links {
   display: block;
@@ -636,7 +629,7 @@ footer img {
 
 .project-links p {
   color: white;
-  font-size: clamp(12px, .75vw, 16px);
+  font-size: clamp(11px, 1vw, 14px);
   padding: 2em;
   padding-top: .5em;
 }
@@ -646,7 +639,7 @@ footer img {
   text-shadow: 2px 2px 4px black;
   font-style: italic;
   text-align: center;
-  font-size: clamp(12px, 1.35vw, 30px);
+  font-size: clamp(16px, 1.8vw, 30px);
 }
 
 .project-links a:link {

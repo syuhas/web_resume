@@ -47,7 +47,7 @@
 
 
 #heading {
-    font-size: clamp(18px, 4vw, 30px);
+    font-size: clamp(24px, 4vw, 36px);
     color: #c28422;
     text-shadow: 5px 5px 10px black;
     font-style: italic;
@@ -65,7 +65,7 @@
 
 
 #section-heading {
-    font-size: clamp(14px, 3.5vw, 24px);
+    font-size: clamp(20px, 3.5vw, 24px);
     font-style: italic;
     text-decoration-line: underline;
     color: #c28422;
@@ -84,7 +84,7 @@ hr {
 
 .btt {
     font-size: clamp(14px, 1.75vw, 20px);
-    text-decoration: underline;
+    text-shadow: 2px 2px 4px black;
 }
 
 #links p{
@@ -95,7 +95,7 @@ a:link, a:visited {color: #D1F5FF;}
 a:hover {color: #1fa2f3;}
 .greenlink:link, .greenlink:visited {color: rgb(42, 200, 50);}
 .greenlink:hover {color: #1fa2f3;}
-.btt:link, .btt:visited {color: rgb(255, 203, 47);}
-.btt:hover {color: #1fa2f3;}
+.btt:link, .btt:visited {color: #1fa2f3;}
+.btt:hover {color: #D1F5FF;}
 .demo:link, .demo:visited {color: white;}
 .demo:hover {color: #1fa2f3;}
