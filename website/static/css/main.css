@@ -9,17 +9,21 @@
 .navbar-nav {
   text-shadow: 2px 2px 3px black;
   color: #1fa2f3;
+  padding-left: 1vw;
+  font-size: clamp(18px, 1.3vw, 28px);
 }
-.navbar {
-  padding-left: 2em;
-  padding-right: 2em;
+
+#home, #resume, #projects {
+  padding-right: 1em;
+  letter-spacing: .2vw;
 }
+
 .navwrap {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   box-shadow: 0px 2px 15px black;
 }
 .navwrap img{
-  height: clamp(70px, 8vw, 100px);
+  height: clamp(100px, 9vw, 140px);
   opacity: 90%;
 }
 /* ********************************************************************************************************************************************************************************************* */
@@ -102,7 +106,7 @@ footer img {
   "ct1 . . . . . . . . . ct2"
   "c1 . . . . . . . . . c2";
 }
-.grid-name-title h1 {font-size: clamp(18px, 2.25vw, 40px); letter-spacing: .2em;}
+.grid-name-title h1 {font-size: clamp(26px, 2.25vw, 40px); letter-spacing: .2em;}
 .grid-name-title h2 {font-size: clamp(15px, 1.55vw, 30px); letter-spacing: .3em;}
 .grid-name-title h1, .grid-name-title h2 {
   font-style: italic;
@@ -238,6 +242,8 @@ footer img {
   body {
     background-image: url(../home-imgs/bg-bl-bl-sm.jpg);
   }
+
+  
 
   .intro-grid {
     grid-template-columns: repeat(8, 1fr);
