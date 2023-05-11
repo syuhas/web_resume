@@ -492,6 +492,7 @@ footer img {
   flex: 1 0 33%;
   border: .1vw solid black;
   box-shadow: 2px 2px 5px black;
+  color: white;
 }
 .exp-child {
   padding: 1em;
