@@ -123,6 +123,9 @@ footer img {
 .grid-name-title p, .grid-welcome p {
   font-size: clamp(14px, .8vw, 16px);
 }
+.grid-name-title a:visited, .grid-name-title a:link {color: white;}
+
+.grid-name-title a:hover {color: #1fa2f3;}
 
 .grid-name-title {
   grid-row: 1 / 3;
