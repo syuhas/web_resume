@@ -38,6 +38,11 @@ def project_users():
     
     return render_template('project-users.html')
 
+@views.route('/project-jenkins')
+def project_jenkins():
+    
+    return render_template('project-jenkins.html')
+
 
 @views.route('/colorchanger')
 def test():
