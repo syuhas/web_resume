@@ -36,6 +36,7 @@
   flex-direction: column;
   min-height: 100vh;
   background-image: url(../home-imgs/bg-bl-bl.jpg);
+  /* background-color: #3b4850; */
   background-size: cover;
   font-family: 'Roboto', sans-serif;
 }
@@ -47,7 +48,8 @@ footer {
   background-color: #343a40;
   border: 1px solid black;
   margin-top: auto;
-  min-height: 9vw;
+  max-height: 12vh;
+  min-height: 5vh;
   padding-top: 1vh;
   padding-bottom: 1vh;
   display: grid;
@@ -71,7 +73,7 @@ footer {
 
 footer img {
   opacity: 50%;
-  height: 4vw;
+  height: 2vw;
 }
 .made-with {
   color: white;
@@ -138,6 +140,8 @@ footer img {
   background-image: url(../home-imgs/techy2.png);
   background-size: 40em;
   background-repeat: no-repeat;
+  max-height: 20vw;
+  max-width: 65vw;
 }
 
 
@@ -248,7 +252,10 @@ footer img {
     background-image: url(../home-imgs/bg-bl-bl-sm.jpg);
   }
 
-  
+  .grid-name-title {
+    max-width: none;
+    max-height: none;
+  }
 
   .intro-grid {
     grid-template-columns: repeat(8, 1fr);
