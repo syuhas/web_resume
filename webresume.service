@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance for my web resume application to run on an EC2 instance
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/web_resume
+ExecStart=/home/ubuntu/web_resume/venv/bin/gunicorn -b 0.0.0.0:8000 application:application
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
