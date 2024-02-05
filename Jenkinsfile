@@ -39,7 +39,7 @@ pipeline {
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
-                    sh 'aws ecs update-service --cluster jenkinsDocker --service jenkinsDocker --force-new-deployment --region us-east-1'
+                    sh 'aws ecs update-service --cluster jenkinsDocker --service webResume --force-new-deployment --region us-east-1'
                 }
                 
             }
