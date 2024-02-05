@@ -16,7 +16,7 @@ COPY . .
 
 
 
-CMD ["gunicorn", "-w", "4", "app:app", "--bind", "0.0.0.0:80"]
+CMD ["gunicorn", "-w", "4", "application:application", "--bind", "0.0.0.0:80"]
 
 
 
