@@ -31,26 +31,58 @@ pipeline {
                 
             }
         }
-        stage('PublishECS') {
+        stage('Register Task Definition') {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: "aws credentials",
+                    credentialsId: "aws-credentials",
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
-                    sh 'aws ecs update-service --cluster jenkinsDocker --service webResume --force-new-deployment --region us-east-1'
+                    script {
+                        def taskDefinition = """
+                        {
+                            "family": "jrepo-task",
+                            "containerDefinitions": [
+                                {
+                                    "name": "jrepo",
+                                    "image": "551796573889.dkr.ecr.us-east-1.amazonaws.com/jrepo:latest",
+                                    "essential": true,
+                                    "memory": 512,
+                                    "cpu": 256,
+                                    "portMappings": [
+                                        {
+                                            "containerPort": 80,
+                                            "hostPort": 80
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                        """
+                        writeFile file: 'task-definition.json', text: taskDefinition
+                        sh 'aws ecs register-task-definition --cli-input-json file://task-definition.json'
+                    }
                 }
-                
             }
         }
-    
-        stage('CleanupServer') {
+        stage('Update ECS Service') {
             steps {
-                echo "docker system prune -f -a"
-                
+                withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: "aws-credentials",
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                    script {
+                        def taskDefinitionArn = sh(
+                            script: "aws ecs describe-task-definition --task-definition jrepo-task --query 'taskDefinition.taskDefinitionArn' --output text",
+                            returnStdout: true
+                        ).trim()
+                        sh "aws ecs update-service --cluster jenkinsDocker --service webResume --task-definition ${taskDefinitionArn}"
+                    }
+                }
             }
         }
-    
-    }   
-}       
+    }
+}
