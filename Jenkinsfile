@@ -47,7 +47,7 @@ pipeline {
                             "networkMode": "awsvpc",
                             "cpu": "256",
                             "memory": "512",
-                            "arn:aws:iam::551796573889:role/ecsTaskExecutionRole",
+                            "executionRoleArn": "arn:aws:iam::551796573889:role/ecsTaskExecutionRole",
                             "containerDefinitions": [
                                 {
                                     "name": "jrepo",
