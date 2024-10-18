@@ -42,11 +42,12 @@ pipeline {
                     script {
                         def taskDefinition = """
                         {
-                            "family": "jrepo-task",
+                            "family": "jenkinsDocker",
                             "requiresCompatibilities": ["FARGATE"],
                             "networkMode": "awsvpc",
                             "cpu": "256",
                             "memory": "512",
+                            "arn:aws:iam::551796573889:role/ecsTaskExecutionRole",
                             "containerDefinitions": [
                                 {
                                     "name": "jrepo",
@@ -80,7 +81,7 @@ pipeline {
                 ]]) {
                     script {
                         def taskDefinitionArn = sh(
-                            script: "aws ecs describe-task-definition --task-definition jrepo-task --query 'taskDefinition.taskDefinitionArn' --output text",
+                            script: "aws ecs describe-task-definition --task-definition jenkinsDocker --query 'taskDefinition.taskDefinitionArn' --output text",
                             returnStdout: true
                         ).trim()
                         sh "aws ecs update-service --cluster jenkinsDocker --service webResume --task-definition ${taskDefinitionArn}"
