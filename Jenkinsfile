@@ -50,7 +50,7 @@ pipeline {
                             "executionRoleArn": "arn:aws:iam::551796573889:role/ecsTaskExecutionRole",
                             "containerDefinitions": [
                                 {
-                                    "name": "jrepo",
+                                    "name": "jd",
                                     "image": "551796573889.dkr.ecr.us-east-1.amazonaws.com/jrepo:latest",
                                     "essential": true,
                                     "memory": 512,
