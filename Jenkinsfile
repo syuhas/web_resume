@@ -43,6 +43,10 @@ pipeline {
                         def taskDefinition = """
                         {
                             "family": "jrepo-task",
+                            "requiresCompatibilities": ["FARGATE"],
+                            "networkMode": "awsvpc",
+                            "cpu": "256",
+                            "memory": "512",
                             "containerDefinitions": [
                                 {
                                     "name": "jrepo",
