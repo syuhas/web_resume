@@ -1,7 +1,6 @@
+{% extends "base.html" %}
 
-{% extends "base.html" %} 
-
-{% block title %}Resume{% endblock %} 
+{% block title %}Resume{% endblock %}
 {% block head %}
 
 {{ super() }}
@@ -15,34 +14,44 @@
         <p>Download a copy of my resume here:</p>
         <section class="res-dl-link">
             <hr>
-            <p><a href="https://s3.amazonaws.com/www.digitalsteve.net/Stephen_Yuhas_Resume.docx"><img src="{{ url_for('static', filename='home-imgs/word.png') }}" alt="">&nbsp Word</a>
-            <a href="https://s3.amazonaws.com/www.digitalsteve.net/Stephen_Yuhas_Resume.pdf"><img src="{{ url_for('static', filename='home-imgs/pdf.png') }}" alt="">&nbsp Pdf</a></p>
+            <p><a href="https://s3.amazonaws.com/www.digitalsteve.net/Stephen_Yuhas_Resume.docx"><img
+                        src="{{ url_for('static', filename='home-imgs/word.png') }}" alt="">&nbsp Word</a>
+                <a href="https://s3.amazonaws.com/www.digitalsteve.net/Stephen_Yuhas_Resume.pdf"><img
+                        src="{{ url_for('static', filename='home-imgs/pdf.png') }}" alt="">&nbsp Pdf</a>
+            </p>
             <hr>
         </section>
     </section>
 
-    <h1 class="res-title">Steve Yuhas<hr></p></h1>
+    <h1 class="res-title">Steve Yuhas
+        <hr>
+        </p>
+    </h1>
     <section class="res-img"></section>
-    
-    
+
+
 
     <section class="summary">
         <h4>Summary</h4>
-        <p style="color: white;">Motivated and disciplined IT professional. I have recently transitioned into a career in IT, with a <span>focused interest in AWS services and DevOps workflows</span>. Resourceful, driven, 
-            and skilled in setting and managing team goals in collaborative project management.  Currently pursuing BS in Computer Science and have <span>two AWS Certifications</span>. Seeking a full time IT position 
+        <p style="color: white;">Motivated and disciplined IT professional with a <span>focused interest in AWS services
+                and DevOps workflows and automation</span>.
+            Transitioned career to IT two years ago from the food service industry.
+            Resourceful, driven, and skilled in setting and managing team goals in collaborative project management.
+            Pursuing BS in Computer Science and have <span>two AWS Certifications</span>. Seeking a full time
+            IT position
             that will provide challenging and diverse responsibilities in commercial environments.</p>
-           
+
     </section>
 
     <section class="skills">
         <article class="skillchild">
             <h4>Technical</h4>
             <ul>
-                <li class="skill-li">Amazon Web Services - 1 year</li>
-                <li class="skill-li">Network Security -  1 year</li>
-                <li class="skill-li">Cloud Computing - 1 year</li>
-                <li class="skill-li">Windows OS - 10 years</li>
-                <li class="skill-li">Linux OS - 10 years</li>
+                <li class="skill-li">Amazon Web Services</li>
+                <li class="skill-li">Network Security</li>
+                <li class="skill-li">Cloud Computing</li>
+                <li class="skill-li">Devops Automation</li>
+                <li class="skill-li">Linux</li>
             </ul>
         </article>
         <article class="skillchild2">
@@ -57,74 +66,144 @@
         </article>
     </section>
 
-    <section class="certs"><h4>Certifications</h4>
+    <section class="certs">
+        <h4>Certifications</h4>
         <section class="certwrapper">
-            <p><!-- <img src="{{ url_for('static', filename='ccp.png') }}" alt=""> --><div data-iframe-width="130" data-iframe-height="234" data-share-badge-id="7f18c1d3-05db-4129-afc1-a913ab5058c6" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></p>
-            <p><!-- <img src="{{ url_for('static', filename='saa.png') }}" alt=""> --><div data-iframe-width="130" data-iframe-height="234" data-share-badge-id="1157d588-e4d9-4b26-9c4b-cb4572976338" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script></p>
+            <p><!-- <img src="{{ url_for('static', filename='ccp.png') }}" alt=""> -->
+            <div data-iframe-width="130" data-iframe-height="234"
+                data-share-badge-id="7f18c1d3-05db-4129-afc1-a913ab5058c6"
+                data-share-badge-host="https://www.credly.com"></div>
+            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            </p>
+            <p><!-- <img src="{{ url_for('static', filename='saa.png') }}" alt=""> -->
+            <div data-iframe-width="130" data-iframe-height="234"
+                data-share-badge-id="1157d588-e4d9-4b26-9c4b-cb4572976338"
+                data-share-badge-host="https://www.credly.com"></div>
+            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            </p>
         </section>
     </section>
     <section class="tech">
         <h4>Technologies</h4>
-        <p>CLOUD PLATFORMS: <span>Amazon Web Services, Microsoft Azure</span></p>
-        <p>LANGUAGES: <span>PYTHON, C++, SQL, HTML, CSS</span></p>
-        <p>SOFTWARE: <span>Visual Studio Code, Docker, GitHub, MYSQL Workbench, MS Office, Jenkins, AWS CDK</span></p>
+        <p>CLOUD PLATFORMS: <span>Amazon Web Services</span></p>
+        <p>LANGUAGES: <span>Python, Typescript, SQL, Javascript, HTML, CSS, C++, Java</span></p>
+        <p>SOFTWARE: <span>Jenkins, Visual Studio Code, Docker, GitHub, DBeaver, MS365, Salesforce</span></p>
 
     </section>
 
-    <section class="exp"><h4>Professional Experience</h4>
+    <section class="exp">
+        <h4>Professional Experience</h4>
         <section class="exp-parent">
-            <p style="color: white; text-shadow: 4px 4px 8px black;">Mental Health Association of Maryland<br><span style="color: #1fa2f3;">IT Project Manager, Consultant</span></p>  <p>Lutherville, MD</p>    <p style="font-style: italic">2023 – Present</p>
+            <p style="color: white; text-shadow: 4px 4px 8px black;">Finra<br><span
+                style="color: #1fa2f3;">IT Solutions Analyst</span></p>
+            <p>Lutherville, MD</p>
+            <p style="font-style: italic">Jul 2023 – Oct 2024 (RIF)</p>
             <article class="exp-child">
                 <ul>
-                    <li>Create project plans and goals for implementation of IT solutions</li>
-                    <li>Gather user story data for internal company processes to analyze and extract pain points and requirements</li>
+                    <li>Develop and maintain internal monitoring and entitlement applications and work to reduce operational toil</li>
+                    <li> Responsible for daily Jenkins production deployments for application teams within the organization</li>
+                    <li>Leveraged JIRA ticketing to monitor upcoming deployments as they are promoted through development pipeline</li>
+                    <li>Troubleshooting of deployments utilizing the Jenkins console and assist in remediating issues including pipeline
+                        configuration and access to AWS environments</li>
+                    <li>Configure IAM Roles, Policies and Users to manage granular access to AWS resources while adhering to least
+                        privilege principle</li>
+                    <li>
+                        <p style="box-shadow: none; border: none; padding-bottom: 0;">Accomplishments</p>
+                        <ul>
+                            <li>Developed version 2 of our internal deployment organization application including:
+                                <ul>
+                                    <li>Personalized Jira dashboards for deployment and service tickets</li>
+                                    <li>Dashboard for internal reports around AWS, Jenkins, bitbucket and Jira services</li>
+                                    <li>AWS Lambda Canary dashboard tool for logging/monitoring of deployed production resources</li>
+                                    <li>Automation tool for Jira to create more standardized deployment ticket creation across
+                                        organization</li>
+                                </ul>
+
+                            </li>
+                            <li>Created multiple reports to aid in increased productivity and maintaining security compliance</li>
+                            <li>Organized and developed solution to automate cross-region database replication across > 100 internal
+                                AWS accounts</li>
+                            <li>Contributed Jira automation within the production pipeline for an organizational initiative with the goal
+                                of faster paths to production for application teams</li>
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </article>
+            <p style="color: white; text-shadow: 4px 4px 8px black; width: 75%;">Mental Health Association of Maryland<br><span
+                    style="color: #1fa2f3;">IT Solutions Analyst</span></p>
+            <p>Lutherville, MD</p>
+            <p style="font-style: italic">2023</p>
+            <article class="exp-child">
+                <ul>
+                    <li>Gather User Story data for current company processes to analyze and extract pain points and
+                        requirements
+                    </li>
+                    <li>Translate necessary requirements into actionable IT solutions</li>
                     <li>Coordinate between external IT vendors and internal staff to meet stakeholder expectations</li>
-                    <li>Identify potential issues and track progress and milestones to ensure projects stay on schedule and within budget</li>
+                    <li>Worked with teams to develop a new internal scheduling solution for hospital site visits</li>
                 </ul>
             </article>
-            <p style="color: white; text-shadow: 4px 4px 8px black;">Brightport Managed Solutions<br><span style="color: #1fa2f3;">IT Business Analyst</span></p>  <p>Ellicott City, MD</p>    <p style="font-style: italic">2022 – Present</p>
+            <p style="color: white; text-shadow: 4px 4px 8px black;">Baltimore County School System<br><span
+                    style="color: #1fa2f3;">IT Data Analyst</span></p>
+            <p>Towson, MD</p>
+            <p style="font-style: italic">2023</p>
             <article class="exp-child">
                 <ul>
-                    <li>Research and collect data to provide actionable information for client IT solutions and funding opportunities</li>
-                    <li>Contracted as a data analyst consultant by the Baltimore County School System to assist in analysis and validation of weekly changes in health coverage for thousands of faculty members 
-                        while documenting and refining new company SOP’s</li>
+                    <li>Investigated and remediated data integrity from a resulting data loss</li>
+                    <li>Developed automation and processes to categorize and structure data investigation findings</li>
+                    <li>Worked with the database team to identify and prevent future data vulnerabilities</li>
                 </ul>
             </article>
-            <p style="color: white; text-shadow: 4px 4px 8px black;">The Ale House<br><span style="color: #1fa2f3;">Kitchen Manager</span></p>  <p>Columbia, MD</p>    <p style="font-style: italic">2019 – Present</p>
+            <p style="color: white; text-shadow: 4px 4px 8px black;">The Ale House<br><span
+                    style="color: #1fa2f3;">Kitchen Manager</span></p>
+            <p>Columbia, MD</p>
+            <p style="font-style: italic">2019 – Present</p>
             <article class="exp-child">
                 <ul>
                     <li>Guided and mentored a team of professionals to execute efficiently and consistently</li>
-                    <li>Developed and researched unique items to deliver business value while keeping customer satisfaction at the forefront</li>
+                    <li>Developed and researched unique items to deliver business value while keeping customer
+                        satisfaction at the forefront</li>
                     <li>Fostered and created relationships with vendor companies and representatives</li>
                     <li>Used computer systems and detailed reports to budget and control variable costs</li>
                 </ul>
             </article>
-            <p style="color: white; text-shadow: 4px 4px 8px black;">Sullivan's<br><span style="color: #1fa2f3;">Executive Chef</span></p>  <p>Baltimore, MD</p>    <p style="font-style: italic">2017 – 2019</p>
+            <p style="color: white; text-shadow: 4px 4px 8px black;">Sullivan's<br><span
+                    style="color: #1fa2f3;">Executive Chef</span></p>
+            <p>Baltimore, MD</p>
+            <p style="font-style: italic">2017 – 2019</p>
             <article class="exp-child">
                 <ul>
-                    <li>Cultivated a professional team in a corporate structured environment at a high level of service</li>
+                    <li>Cultivated a professional team in a corporate structured environment at a high level of service
+                    </li>
                     <li>Ensured accurate daily production based on financial forecasts and accurate inventory</li>
-                    <li>Refined computer systems and generated forecasts to closely monitor costs against weekly budget</li>
+                    <li>Refined computer systems and generated forecasts to closely monitor costs against weekly budget
+                    </li>
                     <li>Monitored operations closely to adhere with strict corporate guidelines</li>
                 </ul>
             </article>
-            
+
         </section>
-        
-        
+
+
 
 
     </section>
-    <section class="edu"><h4>Education</h4>
+    <section class="edu">
+        <h4>Education</h4>
         <article class="edu-parent">
-            <p class="edu-child"><span style="text-shadow: 2px 2px 5px black;">B.S. Computer Science</span> - in progress (Est. completion 2025)</p>
+            <p class="edu-child"><span style="text-shadow: 2px 2px 5px black;">B.S. Computer Science</span> - in
+                progress (Est. completion 2025)</p>
             <p class="edu-child">
-                <ul>
-                    <li>Current: Howard Community College</li>
-                    <li>Studying: Computer Science, Calculus</li>
-                </ul>
+            <ul>
+                <li>Current: Howard Community College</li>
+                <li>Studying: Computer Science, Calculus</li>
+            </ul>
             </p>
-            <p class="edu-child"><span style="text-shadow: 2px 2px 5px black;">Certificate, Culinary Arts</span> - Anne Arundel Community College - 2012</p>
+            <p class="edu-child"><span style="text-shadow: 2px 2px 5px black;">Certificate, Culinary Arts</span> - Anne
+                Arundel Community College - 2012</p>
         </article>
     </section>
 </main>
