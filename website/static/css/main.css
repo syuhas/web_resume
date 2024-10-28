@@ -349,7 +349,7 @@ footer img {
 }
 
 .resume_parent h1 {
-  color: white;
+  color: #c28422;
   text-shadow: 2px 2px 1px black;
   font-size: clamp(18px, 4vw, 36px);
 }
