@@ -349,9 +349,9 @@ footer img {
 }
 
 .resume_parent h1 {
-  color: #1fa2f3;
+  color: white;
   text-shadow: 2px 2px 1px black;
-  font-size: clamp(18px, 3vw, 30px);
+  font-size: clamp(18px, 4vw, 36px);
 }
 
 .resume_parent h4 {
@@ -414,9 +414,12 @@ footer img {
 
 .summary p {
   font-size: inherit;
-  padding: 5em;
-  margin-right: 10rem;
-  margin-left: 10rem;
+  padding: 5rem;
+  margin-right: 8vw;
+  margin-left: 8vw;
+  text-shadow: 2px 2px 4px #064452;
+  font-size: clamp(12px, 1vw, 16px);
+  color: white;
 }
 .summary span, .tech span, .skill-li span {
   text-shadow: 2px 2px 4px black;
@@ -568,6 +571,7 @@ footer img {
   }
   .summary p {
     padding: 1.5em;
+
   }
   .summary {
     background-size: 12em;
